@@ -44,7 +44,7 @@ export function Hero() {
             >
               <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Studio
             </motion.span>
-            <h1 className="text-7xl md:text-9xl lg:text-[11rem] font-display font-black text-white leading-[0.8] tracking-tighter mb-8">
+            <h1 className="text-7xl md:text-9xl lg:text-[11rem] font-display font-black text-foreground leading-[0.8] tracking-tighter mb-8">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -97,9 +97,9 @@ export function Hero() {
               />
             </motion.button>
             <motion.button 
-              whileHover={{ scale: 1.05, background: "rgba(255,255,255,0.1)" }}
+              whileHover={{ scale: 1.05, background: "rgba(var(--foreground),0.1)" }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-12 py-6 bg-white/5 border border-white/10 text-white rounded-full font-black text-xl transition-all backdrop-blur-3xl flex items-center justify-center gap-4 group"
+              className="w-full sm:w-auto px-12 py-6 bg-foreground/5 border border-foreground/10 text-foreground rounded-full font-black text-xl transition-all backdrop-blur-3xl flex items-center justify-center gap-4 group"
             >
               View Stack
               <Cpu className="w-6 h-6 group-hover:scale-125 transition-transform" />

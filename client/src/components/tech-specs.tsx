@@ -9,7 +9,7 @@ const stats = [
 
 export function TechSpecs() {
   return (
-    <section className="py-40 bg-black relative overflow-hidden">
+    <section className="py-40 bg-background relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF5E3605,transparent)]" />
       
       <div className="container px-6 mx-auto relative z-10">
@@ -20,7 +20,7 @@ export function TechSpecs() {
               whileInView={ { opacity: 1, y: 0 } }
               viewport={ { once: true } }
             >
-              <h2 className="text-5xl md:text-7xl font-display font-black text-white leading-none tracking-tighter mb-8">
+              <h2 className="text-5xl md:text-7xl font-display font-black text-foreground leading-none tracking-tighter mb-8">
                 Extreme <span className="text-primary italic">Performance.</span>
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
@@ -39,7 +39,7 @@ export function TechSpecs() {
                   className="space-y-2"
                 >
                   <stat.icon className="w-6 h-6 text-primary mb-4" />
-                  <div className="text-4xl font-display font-bold text-white tracking-tighter">{stat.value}</div>
+                  <div className="text-4xl font-display font-bold text-foreground tracking-tighter">{stat.value}</div>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-bold">{stat.label}</div>
                 </motion.div>
               ))}
@@ -59,11 +59,11 @@ export function TechSpecs() {
                 whileInView={ { opacity: 1, scale: 1 } }
                 viewport={ { once: true } }
                 transition={ { delay: i * 0.1 } }
-                whileHover={ { scale: 1.05, background: "rgba(255,94,54,0.05)" } }
-                className="p-8 rounded-[2rem] border border-white/5 bg-white/5 backdrop-blur-xl group transition-all"
+                whileHover={ { scale: 1.05, background: "rgba(var(--primary),0.05)" } }
+                className="p-8 rounded-[2rem] border border-foreground/5 bg-foreground/5 backdrop-blur-xl group transition-all"
               >
                 <item.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-bold text-white leading-tight">{item.title}</h3>
+                <h3 className="text-lg font-bold text-foreground leading-tight">{item.title}</h3>
               </motion.div>
             ))}
           </div>
