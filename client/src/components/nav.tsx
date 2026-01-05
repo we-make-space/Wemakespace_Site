@@ -2,6 +2,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { Link } from "wouter";
 import { Menu, X, Terminal } from "lucide-react";
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "./theme-provider";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,8 +27,8 @@ export function Nav() {
     }`}>
       <div className="container mx-auto px-6">
         <motion.div 
-          initial={ { y: -100 } }
-          animate={ { y: 0 } }
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
           className={`relative flex items-center justify-between px-8 h-20 rounded-full border transition-all duration-500 ${
             scrolled 
               ? "bg-black/40 backdrop-blur-2xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
@@ -51,16 +52,19 @@ export function Nav() {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                whileHover={ { y: -2 } }
+                whileHover={{ y: -2 }}
                 className="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-primary transition-colors relative group"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </motion.a>
             ))}
+            
+            <ThemeToggle />
+            
             <motion.button 
-              whileHover={ { scale: 1.05 } }
-              whileTap={ { scale: 0.95 } }
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="bg-primary text-white px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,94,54,0.4)] transition-all"
             >
               Start Project
@@ -68,12 +72,15 @@ export function Nav() {
           </div>
 
           {/* Mobile Toggle */}
-          <button
-            className="md:hidden w-12 h-12 flex items-center justify-center text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              className="w-12 h-12 flex items-center justify-center text-white"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
+          </div>
         </motion.div>
       </div>
 
