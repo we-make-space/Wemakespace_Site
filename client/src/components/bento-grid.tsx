@@ -23,7 +23,7 @@ const bentoItems = [
     title: "AI & ML",
     description: "Intelligent automation and predictive analytics.",
     icon: Cpu,
-    className: "md:col-span-1 md:row-span-1",
+    className: "md:col-span-1 md:row-span-2", // Changed to medium size (2 rows)
     bg: "bg-white/5 border-white/10 hover:border-white/30",
     color: "text-white"
   },
@@ -37,9 +37,9 @@ const bentoItems = [
   },
   {
     title: "Real-time Sync",
-    description: "Distributed databases with instant state synchronization across all clients.",
+    description: "Distributed databases with instant state synchronization.",
     icon: Zap,
-    className: "md:col-span-1 md:row-span-1", // Adjusted size
+    className: "md:col-span-1 md:row-span-1",
     bg: "bg-secondary/5 border-white/10 hover:border-primary/30",
     color: "text-secondary"
   },
