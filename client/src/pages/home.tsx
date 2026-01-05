@@ -2,6 +2,8 @@ import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { BentoGrid } from "@/components/bento-grid";
 import { Features } from "@/components/features";
+import { ProjectShowcase } from "@/components/project-showcase";
+import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
 
@@ -12,7 +14,9 @@ export default function Home() {
       <main>
         <Hero />
         <BentoGrid />
+        <ProjectShowcase />
         <Features />
+        <Process />
         <Testimonials />
         
         {/* Simple CTA Section */}
