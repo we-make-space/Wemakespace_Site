@@ -3,6 +3,7 @@ import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { BentoGrid } from "@/components/bento-grid";
 import { TechSpecs } from "@/components/tech-specs";
+import { StatsSection } from "@/components/stats-section";
 import { Features } from "@/components/features";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { Process } from "@/components/process";
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <BentoGrid />
+        <StatsSection />
         <TechSpecs />
         <ProjectShowcase />
         <Features />
