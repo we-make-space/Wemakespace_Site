@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import softwareHero from "@assets/generated_images/futuristic_digital_workspace_with_floating_ui_elements..png";
-import { ArrowRight, Code, Sparkles, Cpu } from "lucide-react";
+import { Code, Sparkles, Cpu } from "lucide-react";
 import { useRef } from "react";
 
 export function Hero() {
@@ -32,14 +32,14 @@ export function Hero() {
           className="max-w-5xl mx-auto text-center space-y-8"
         >
           <motion.div
-            initial={ { opacity: 0, y: 30 } }
-            animate={ { opacity: 1, y: 0 } }
-            transition={ { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.span 
-              initial={ { opacity: 0, scale: 0.8 } }
-              animate={ { opacity: 1, scale: 1 } }
-              transition={ { delay: 0.2 } }
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-12 backdrop-blur-2xl shadow-[0_0_20px_rgba(255,94,54,0.1)]"
             >
               <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Studio
@@ -47,9 +47,9 @@ export function Hero() {
             <h1 className="text-7xl md:text-9xl lg:text-[11rem] font-display font-black text-white leading-[0.8] tracking-tighter mb-8">
               <span className="block overflow-hidden">
                 <motion.span
-                  initial={ { y: "100%" } }
-                  animate={ { y: 0 } }
-                  transition={ { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 } }
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
                   className="block"
                 >
                   We build
@@ -57,9 +57,9 @@ export function Hero() {
               </span>
               <span className="block overflow-hidden">
                 <motion.span
-                  initial={ { y: "100%" } }
-                  animate={ { y: 0 } }
-                  transition={ { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 } }
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                   className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x block"
                 >
                   digital space.
@@ -69,9 +69,9 @@ export function Hero() {
           </motion.div>
 
           <motion.p
-            initial={ { opacity: 0 } }
-            animate={ { opacity: 1 } }
-            transition={ { duration: 1, delay: 0.6 } }
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
             className="text-xl md:text-3xl text-muted-foreground/80 max-w-3xl mx-auto leading-tight font-light tracking-tight"
           >
             Engineering seamless digital experiences. We create high-performance 
@@ -79,9 +79,9 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            initial={ { opacity: 0, y: 20 } }
-            animate={ { opacity: 1, y: 0 } }
-            transition={ { duration: 0.8, delay: 0.8 } }
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
           >
             <motion.button 
@@ -105,7 +105,7 @@ export function Hero() {
               <Cpu className="w-6 h-6 group-hover:scale-125 transition-transform" />
             </motion.button>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
       
       {/* Animated Code Grid Lines */}
