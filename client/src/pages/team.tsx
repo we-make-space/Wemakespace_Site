@@ -41,22 +41,22 @@ export default function Team() {
       <SEO title="Our Team" description="Meet the architects and engineers behind Wemakespace." />
       <Nav />
       
-      <main className="pt-32 pb-40">
-        <div className="container px-6 mx-auto">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">
+        <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mb-32"
+            className="max-w-4xl mb-16 sm:mb-24 md:mb-32"
           >
-            <h1 className="text-6xl md:text-8xl font-display font-black tracking-tighter uppercase leading-none mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-tighter uppercase leading-none mb-4 sm:mb-6 md:mb-8">
               The <span className="text-primary italic">Architects.</span>
             </h1>
-            <p className="text-2xl md:text-3xl text-muted-foreground font-light leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground font-light leading-relaxed">
               We are a multidisciplinary collective of engineers, designers, and strategists obsessed with the intersection of space and software.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -66,21 +66,21 @@ export default function Team() {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl mb-6 bg-muted">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl sm:rounded-2xl mb-4 sm:mb-6 bg-muted">
                   <img 
                     src={member.image} 
                     alt={member.name}
                     className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                    <div className="flex gap-4">
-                      <a href={member.social.twitter} className="text-white hover:text-primary transition-colors"><Twitter size={20} /></a>
-                      <a href={member.social.linkedin} className="text-white hover:text-primary transition-colors"><Linkedin size={20} /></a>
-                      <a href={member.social.github} className="text-white hover:text-primary transition-colors"><Github size={20} /></a>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4 sm:p-6">
+                    <div className="flex gap-2 sm:gap-4">
+                      <a href={member.social.twitter} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-primary transition-colors" aria-label="Twitter"><Twitter size={20} /></a>
+                      <a href={member.social.linkedin} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-primary transition-colors" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                      <a href={member.social.github} className="min-w-[44px] min-h-[44px] flex items-center justify-center text-white hover:text-primary transition-colors" aria-label="GitHub"><Github size={20} /></a>
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-display font-bold uppercase tracking-tighter mb-1 group-hover:text-primary transition-colors">
+                <h3 className="text-lg sm:text-xl font-display font-bold uppercase tracking-tighter mb-1 group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
                 <p className="text-sm font-bold uppercase tracking-widest text-primary/80 mb-4">{member.role}</p>
@@ -94,13 +94,13 @@ export default function Team() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="mt-40 p-12 rounded-3xl border border-primary/20 bg-primary/5 text-center"
+            className="mt-16 sm:mt-24 md:mt-40 p-6 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl border border-primary/20 bg-primary/5 text-center"
           >
-            <h2 className="text-4xl font-display font-bold uppercase tracking-tighter mb-6">Want to join the resonance?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold uppercase tracking-tighter mb-4 sm:mb-6">Want to join the resonance?</h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-1">
               We're always looking for extraordinary talent to help us define the next digital era.
             </p>
-            <button className="bg-primary text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform">
+            <button className="min-h-[48px] px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-transform text-sm sm:text-base">
               View Openings
             </button>
           </motion.div>

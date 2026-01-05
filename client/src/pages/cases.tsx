@@ -50,15 +50,15 @@ export default function Insights() {
 
       <Nav />
 
-      <main className="pt-32 pb-40">
-        <div className="container px-6 mx-auto">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-32 md:pb-40">
+        <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
 
           {/* Header */}
-          <div className="max-w-4xl mb-20">
+          <div className="max-w-4xl mb-10 sm:mb-16 md:mb-20">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="px-6 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-[0.2em] uppercase border border-primary/20 inline-block mb-8"
+              className="px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-bold tracking-[0.2em] uppercase border border-primary/20 inline-block mb-4 sm:mb-8"
             >
               Our Blog
             </motion.span>
@@ -66,7 +66,7 @@ export default function Insights() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-display font-black tracking-tighter uppercase leading-none mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-tighter uppercase leading-tight mb-4 sm:mb-8"
             >
               Updates & <br />
               <span className="text-primary italic">& Releases.</span>
@@ -76,7 +76,7 @@ export default function Insights() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl text-muted-foreground font-light leading-relaxed max-w-2xl"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground font-light leading-relaxed max-w-2xl"
             >
               The WeMakeSpace blog covers product updates, releases, and stories
               from our journey building modern digital products.
@@ -84,7 +84,7 @@ export default function Insights() {
           </div>
 
           {/* Categories */}
-          <div className="flex flex-wrap gap-4 mb-20">
+          <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-10 sm:mb-16 md:mb-20">
             {!categoriesLoading &&
               allCategories.map((cat, i) => {
                 const Icon = getIconByName(cat.icon_name);
@@ -97,7 +97,7 @@ export default function Insights() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: i * 0.05 }}
                     className={`
-                      flex items-center gap-3 px-8 py-4 rounded-full border transition-all
+                      flex items-center gap-2 sm:gap-3 min-h-[44px] px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full border transition-all
                       ${
                         activeCategory === cat.slug
                           ? "bg-primary text-white border-primary"
@@ -136,12 +136,12 @@ export default function Insights() {
 
           {/* Featured Article */}
           {!articlesLoading && featuredArticle && (
-            <section className="mb-32">
+            <section className="mb-16 sm:mb-24 md:mb-32">
               <Link href={`/insights/${featuredArticle.id}`}>
-                <motion.div
+                  <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="relative group rounded-[4rem] overflow-hidden border border-foreground/5 aspect-[16/9] md:aspect-[21/9] bg-muted cursor-pointer"
+                  className="relative group rounded-[2rem] sm:rounded-[3rem] md:rounded-[4rem] overflow-hidden border border-foreground/5 aspect-[16/9] md:aspect-[21/9] bg-muted cursor-pointer"
                 >
                   <img
                     src={featuredArticle.image_url || ""}
@@ -151,17 +151,17 @@ export default function Insights() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
 
-                  <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                    <div className="max-w-3xl space-y-6">
-                      <span className="px-4 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em]">
+                  <div className="absolute inset-0 p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-end">
+                    <div className="max-w-3xl space-y-3 sm:space-y-4 md:space-y-6">
+                      <span className="px-3 sm:px-4 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em]">
                         {featuredArticle.category?.name || "Featured"}
                       </span>
 
-                      <h2 className="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black uppercase tracking-tighter">
                         {featuredArticle.title}
                       </h2>
 
-                      <p className="text-lg text-muted-foreground max-w-xl">
+                      <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl line-clamp-2 sm:line-clamp-none">
                         {featuredArticle.excerpt}
                       </p>
 
@@ -195,7 +195,7 @@ export default function Insights() {
           )}
 
           {/* Article Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
             {!articlesLoading &&
               otherArticles.map((article, i) => (
                 <motion.article
@@ -208,7 +208,7 @@ export default function Insights() {
                 >
                   <Link href={`/insights/${article.id}`}>
                     <div className="cursor-pointer">
-                      <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-foreground/5 mb-8">
+                      <div className="relative aspect-[4/3] rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-foreground/5 mb-4 sm:mb-6 md:mb-8">
                         <img
                           src={article.image_url || ""}
                           alt={article.title}
@@ -228,7 +228,7 @@ export default function Insights() {
                           </span>
                         </div>
 
-                        <h3 className="text-2xl font-display font-black uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-display font-black uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
                           {article.title}
                         </h3>
 

@@ -17,21 +17,21 @@ export function Hero() {
   const yTranslate = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
   return (
-    <section ref={targetRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section ref={targetRef} className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-8">
       {/* Parallax Background */}
       <motion.div style={{ opacity, scale }} className="absolute inset-0 z-0">
         <img
           src={"Bg.png"}
           alt="Digital Engineering"
-          className="w-full h-full object-cover opacity-90 scale-110 object-top"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-90 scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background" />
       </motion.div>
 
-      <div className="container relative z-10 px-6 mx-auto">
+      <div className="container relative z-10 px-4 sm:px-6 mx-auto max-w-[100vw]">
         <motion.div 
           style={{ y: yTranslate, opacity }}
-          className="max-w-5xl mx-auto text-center space-y-8"
+          className="max-w-5xl mx-auto text-center space-y-4 sm:space-y-8"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -46,7 +46,7 @@ export function Hero() {
             >
               <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Company
             </motion.span>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[9rem] font-display font-black text-foreground leading-[0.8] tracking-tighter mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-foreground leading-[0.85] tracking-tighter mb-4 sm:mb-8">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -74,7 +74,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg md:text-3xl text-muted-foreground/80 max-w-3xl mx-auto leading-tight font-light tracking-tight"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground/80 max-w-3xl mx-auto leading-snug sm:leading-tight font-light tracking-tight px-1"
           >
             Engineering seamless digital experiences.
             We build high-performance products for people, platforms, and the future.

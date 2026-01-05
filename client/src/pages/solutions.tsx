@@ -66,23 +66,23 @@ export default function Solutions() {
           <SEO title="Solutions" description="We solve complex engineering challenges for forward-thinking companies." />
           <Nav />
 
-          <section id="services" className="py-32 px-6 bg-card/30 relative">
-          <div className="max-w-7xl mx-auto">
+          <section id="services" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-card/30 relative">
+          <div className="max-w-7xl mx-auto w-full box-border">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-24"
+              className="text-center mb-12 sm:mb-16 md:mb-24"
             >
-              <h2 className="text-5xl md:text-7xl font-black font-display mb-6 tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black font-display mb-4 sm:mb-6 tracking-tighter">
                 Our Core <span className="text-primary italic">Services</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-light px-1">
                 We don't just build software; we engineer high-performance systems. Our code is optimized for speed, efficiency, and massive scale from day one.
               </p>
             </motion.div>
   
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {HARDCODED_SERVICES.map((service, idx) => (
                 <ServiceCard
                   key={service.id}
@@ -97,32 +97,32 @@ export default function Solutions() {
         </section>
   
         {/* Additional Info Section */}
-        <section className="py-32 px-6 bg-background">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+        <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-background">
+          <div className="max-w-7xl mx-auto w-full box-border">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl md:text-6xl font-black font-display mb-8 tracking-tighter">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black font-display mb-6 sm:mb-8 tracking-tighter">
                   Why We Are <span className="text-primary italic">Different</span>
                 </h2>
-                <div className="space-y-8">
+                <div className="space-y-5 sm:space-y-6 md:space-y-8">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Uncompromising Performance</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2">Uncompromising Performance</h3>
                     <p className="text-muted-foreground font-light leading-relaxed">
                       We don't just build software; we engineer high-performance systems. Our code is optimized for speed, efficiency, and massive scale from day one.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Zero-Trust by Default</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2">Zero-Trust by Default</h3>
                     <p className="text-muted-foreground font-light leading-relaxed">
                       Security isn't an afterthought. Every line of code we write follows the strictest security protocols, ensuring your data remains yours.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Future-Proof Architecture</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-2">Future-Proof Architecture</h3>
                     <p className="text-muted-foreground font-light leading-relaxed">
                       The tech landscape moves fast. We build architectures that are flexible enough to evolve with new technologies without costly rewrites.
                     </p>
@@ -133,13 +133,19 @@ export default function Solutions() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative aspect-square rounded-[3rem] overflow-hidden bg-muted border border-border"
+                className="relative aspect-square rounded-[2rem] sm:rounded-[3rem] overflow-hidden bg-muted border border-border min-h-[200px]"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 animate-pulse" />
-                <div className="absolute inset-0 flex items-center justify-center p-12">
-                  <div className="text-center">
-                    <div className="text-5xl font-black font-display text-primary mb-4 italic">10X</div>
-                    <div className="text-lg font-bold uppercase tracking-widest">Faster Deployment</div>
+                <img
+                  src="https://images.unsplash.com/photo-1621609764095-b32bbe35cf3a?w=800&auto=format&fit=crop&q=80"
+                  alt="Fast deployment"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-background/70" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 animate-pulse mix-blend-overlay" aria-hidden />
+                <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8 md:p-12">
+                  <div className="text-center relative z-10">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-black font-display text-primary mb-2 sm:mb-4 italic drop-shadow-sm">10X</div>
+                    <div className="text-sm sm:text-base md:text-lg font-bold uppercase tracking-widest text-foreground drop-shadow-sm">Faster Deployment</div>
                   </div>
                 </div>
               </motion.div>

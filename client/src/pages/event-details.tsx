@@ -30,7 +30,7 @@ export default function EventDetails() {
               "radial-gradient(1200px 600px at 10% 20%, rgba(255,94,54,0.20), transparent 55%), radial-gradient(900px 520px at 70% 10%, rgba(255,94,54,0.14), transparent 55%)",
           }}
         />
-        <div className="container mx-auto px-6 py-10">
+        <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-10">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -42,8 +42,8 @@ export default function EventDetails() {
         </div>
       </header>
 
-      <section className="container mx-auto px-6 pb-16" data-testid="section-event-details">
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
+      <section className="container mx-auto px-4 sm:px-6 pb-10 sm:pb-16 max-w-[100vw]" data-testid="section-event-details">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 items-start">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,12 +81,12 @@ export default function EventDetails() {
             className="lg:col-span-7"
           >
             <h1
-              className="text-4xl md:text-5xl font-display font-bold leading-[1.02]"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-[1.02]"
               data-testid="text-event-title"
             >
               {EVENT.title}
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground" data-testid="text-event-tagline">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground" data-testid="text-event-tagline">
               {EVENT.tagline}
             </p>
 
@@ -127,11 +127,11 @@ export default function EventDetails() {
               {EVENT.description}
             </p>
 
-            <div className="mt-10 rounded-3xl border border-border bg-card p-6" data-testid="card-event-agenda">
-              <h2 className="text-xl font-display font-semibold" data-testid="text-agenda-title">
+            <div className="mt-8 sm:mt-10 rounded-2xl sm:rounded-3xl border border-border bg-card p-4 sm:p-6" data-testid="card-event-agenda">
+              <h2 className="text-lg sm:text-xl font-display font-semibold" data-testid="text-agenda-title">
                 Agenda highlights
               </h2>
-              <div className="mt-5 space-y-3" data-testid="list-agenda">
+              <div className="mt-4 sm:mt-5 space-y-2 sm:space-y-3" data-testid="list-agenda">
                 {EVENT.agenda.map((a) => (
                   <div
                     key={a.time}
@@ -149,11 +149,11 @@ export default function EventDetails() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3" data-testid="row-event-cta">
+            <div className="mt-6 sm:mt-8 flex flex-wrap gap-2 sm:gap-3" data-testid="row-event-cta">
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow"
                 data-testid="button-register"
               >
                 Register interest
@@ -161,7 +161,7 @@ export default function EventDetails() {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="inline-flex items-center justify-center rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium hover:bg-muted/60 transition-colors"
+                className="inline-flex items-center justify-center min-h-[44px] rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium hover:bg-muted/60 transition-colors"
                 data-testid="button-add-calendar"
               >
                 Add to calendar

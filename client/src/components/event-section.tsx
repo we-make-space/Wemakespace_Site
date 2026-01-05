@@ -13,7 +13,7 @@ const NEXT_EVENT = {
 
 export function EventSection() {
   return (
-    <section className="relative py-24 overflow-hidden" data-testid="section-event">
+    <section className="relative py-12 sm:py-16 md:py-24 overflow-hidden" data-testid="section-event">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -22,8 +22,8 @@ export function EventSection() {
         }}
       />
 
-      <div className="container px-6 mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+      <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -66,9 +66,9 @@ export function EventSection() {
                   </div>
                 </div>
 
-                <div className="p-6 md:p-7">
-                  <div className="flex items-center justify-between gap-4" data-testid="row-event-title">
-                    <h2 className="text-2xl md:text-3xl font-display font-bold leading-tight">
+                <div className="p-4 sm:p-5 md:p-6 lg:p-7">
+                  <div className="flex items-center justify-between gap-3" data-testid="row-event-title">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight">
                       {NEXT_EVENT.title}
                     </h2>
                     <div className="hidden sm:flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 text-primary">
@@ -80,18 +80,18 @@ export function EventSection() {
                     {NEXT_EVENT.subtitle}
                   </p>
 
-                  <div className="mt-5 flex flex-wrap gap-3" data-testid="row-event-meta">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 dark:bg-background/10 px-3 py-1 text-sm">
-                      <Calendar className="h-4 w-4 text-primary" aria-hidden="true" />
+                  <div className="mt-4 sm:mt-5 flex flex-wrap gap-2 sm:gap-3" data-testid="row-event-meta">
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-background/70 dark:bg-background/10 px-2.5 sm:px-3 py-1 text-xs sm:text-sm">
+                      <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" aria-hidden="true" />
                       <span data-testid="text-event-date">{NEXT_EVENT.date}</span>
                     </div>
-                    <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 dark:bg-background/10 px-3 py-1 text-sm">
-                      <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
-                      <span data-testid="text-event-location">{NEXT_EVENT.location}</span>
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-background/70 dark:bg-background/10 px-2.5 sm:px-3 py-1 text-xs sm:text-sm">
+                      <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" aria-hidden="true" />
+                      <span data-testid="text-event-location" className="truncate max-w-[180px] sm:max-w-none">{NEXT_EVENT.location}</span>
                     </div>
                   </div>
 
-                  <p className="mt-5 leading-relaxed text-muted-foreground" data-testid="text-event-blurb">
+                  <p className="mt-3 sm:mt-5 text-sm sm:text-base leading-relaxed text-muted-foreground line-clamp-3 sm:line-clamp-none" data-testid="text-event-blurb">
                     {NEXT_EVENT.blurb}
                   </p>
 
@@ -116,27 +116,27 @@ export function EventSection() {
             </div>
           </motion.div>
 
-          <div className="lg:col-span-7 space-y-10">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 md:space-y-10">
             <div>
               <p
-                className="text-sm uppercase tracking-[0.22em] text-muted-foreground"
+                className="text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.22em] text-muted-foreground"
                 data-testid="text-event-kicker"
               >
                 Recap
               </p>
               <h2
-                className="mt-3 text-4xl text-white md:text-5xl font-display font-bold leading-[1.02]"
+                className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-display font-bold leading-[1.08]"
                 data-testid="text-event-heading"
               >
                 Recap of our 
                 <span className="text-primary italic"> 2025 Highlights</span>
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground" data-testid="text-event-lede">
+              <p className="mt-2 sm:mt-4 text-base sm:text-lg text-muted-foreground" data-testid="text-event-lede">
                 We've had a great year and we're looking forward to what's next.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-5" data-testid="grid-event-points">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5" data-testid="grid-event-points">
               {[
                 {
                   title: "Built for momentum",
@@ -161,14 +161,14 @@ export function EventSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.6 }}
                   transition={{ delay: i * 0.07 }}
-                  className="rounded-3xl border border-border bg-card p-6 hover:shadow-xl hover:shadow-primary/5 transition-shadow"
+                  className="rounded-2xl sm:rounded-3xl border border-border bg-card p-4 sm:p-5 md:p-6 hover:shadow-xl hover:shadow-primary/5 transition-shadow"
                   data-testid={`card-event-point-${i}`}
                 >
-                  <h3 className="text-lg font-semibold" data-testid={`text-event-point-title-${i}`}>
+                  <h3 className="text-base sm:text-lg font-semibold" data-testid={`text-event-point-title-${i}`}>
                     {p.title}
                   </h3>
                   <p
-                    className="mt-2 text-sm leading-relaxed text-muted-foreground"
+                    className="mt-1.5 sm:mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground"
                     data-testid={`text-event-point-desc-${i}`}
                   >
                     {p.desc}

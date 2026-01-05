@@ -15,45 +15,45 @@ export function Footer({ showCTA = false }: FooterProps) {
   const [email, setEmail] = useState("");
 
   return (
-    <footer className="bg-foreground text-background py-16 relative overflow-hidden">
+    <footer className="bg-foreground text-background py-10 sm:py-14 md:py-16 relative overflow-hidden">
       {/* Newsletter CTA Section */}
       {showCTA && (
-        <div className="container px-6 mx-auto mb-32">
+        <div className="container px-4 sm:px-6 mx-auto mb-16 sm:mb-24 md:mb-32">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary/10 border border-primary/20 p-8 md:p-12 rounded-[3rem] text-foreground flex flex-col md:flex-row items-center gap-12 overflow-hidden relative"
+            className="bg-primary/10 border border-primary/20 p-5 sm:p-6 md:p-8 lg:p-12 rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] text-foreground flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-10 z-0">
               <img src={newsletterImage} alt="Newsletter Background" className="w-full h-full object-cover" />
             </div>
             
-            <div className="relative z-10 flex-1">
-              <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter uppercase leading-none mb-6">
+            <div className="relative z-10 flex-1 w-full text-center md:text-left">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black tracking-tighter uppercase leading-tight mb-3 sm:mb-6">
                 Stay in the <br/><span className="text-primary italic">Resonance.</span>
               </h2>
-              <p className="text-lg md:text-xl font-light text-muted-foreground leading-tight max-w-xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-muted-foreground leading-snug max-w-xl">
                 Get the latest insights, product updates, and industry trends delivered to your inbox.
               </p>
             </div>
 
-            <div className="relative z-10 w-full md:w-auto md:min-w-[320px]">
-              <div className="flex flex-col gap-4">
+            <div className="relative z-10 w-full md:w-auto md:min-w-[280px] lg:min-w-[320px]">
+              <div className="flex flex-col gap-3 sm:gap-4">
                 <div className="relative">
                   <input 
                     type="email" 
                     placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-background border border-white/10 rounded-full py-4 px-6 text-foreground focus:border-primary outline-none transition-colors"
+                    className="w-full bg-background border border-white/10 rounded-full py-3 sm:py-4 px-4 sm:px-6 text-foreground text-sm sm:text-base focus:border-primary outline-none transition-colors min-h-[48px]"
                   />
-                  <Mail className="absolute right-6 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                  <Mail className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full md:w-auto bg-primary text-white py-3 md:py-4 rounded-full font-black uppercase tracking-widest hover:shadow-xl transition-all flex items-center justify-center gap-3"
+                  className="w-full md:w-auto min-h-[48px] bg-primary text-white py-3 sm:py-4 rounded-full font-black text-sm sm:text-base uppercase tracking-widest hover:shadow-xl transition-all flex items-center justify-center gap-3"
                 >
                   Subscribe <ArrowRight size={18} />
                 </motion.button>
@@ -65,16 +65,16 @@ export function Footer({ showCTA = false }: FooterProps) {
 
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
-      <div className="container px-6 mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-2 flex flex-col items-start gap-6">
-            <div className="flex items-center gap-3 mb-6">
-              <WemakeSpaceLogo className={"rounded"} size={33} />
-              <h2 className="text-3xl font-display font-bold">
+      <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
+          <div className="sm:col-span-2 flex flex-col items-start gap-4 sm:gap-6">
+            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-6">
+              <WemakeSpaceLogo className={"rounded shrink-0"} size={28} />
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold">
                 Wemakespace<span className="text-primary">.</span>
               </h2>
-          </div>
-            <p className="text-neutral-400 max-w-sm">
+            </div>
+            <p className="text-neutral-400 text-sm sm:text-base max-w-sm">
               Making room for you. Creating sustainable, beautiful, and functional applications for the modern world.
             </p>
             <div className="flex items-center gap-3 mt-4">
@@ -126,13 +126,14 @@ export function Footer({ showCTA = false }: FooterProps) {
             <ul className="space-y-2 text-neutral-400">
               <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Blog</Link></li>
               <li><Link href="/event" className="hover:text-primary transition-colors cursor-pointer">Event Details</Link></li>
+              <li><Link href="/contact" className="hover:text-primary transition-colors cursor-pointer">Contact Us</Link></li>
             </ul>
           </div>
         </div>
         
-        <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500">
+        <div className="pt-6 sm:pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-neutral-500 text-center md:text-left">
           <p>Copyright © {new Date().getFullYear()} Wemakespace LLC. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link href="/privacy">
               <a className="hover:text-neutral-300">Privacy Policy</a>
             </Link>

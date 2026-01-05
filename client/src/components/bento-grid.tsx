@@ -62,12 +62,12 @@ const bentoItems = [
 
 export function BentoGrid() {
   return (
-    <section id="services" className="py-20 bg-background relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 md:py-20 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/10 blur-[150px] translate-x-1/2 translate-y-1/2 rounded-full pointer-events-none" />
 
-      <div className="container px-6 mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+      <div className="container px-4 sm:px-6 mx-auto relative z-10 max-w-[100vw]">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 md:mb-16 gap-6 sm:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -75,16 +75,16 @@ export function BentoGrid() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <h2 className="text-6xl md:text-8xl font-black mb-8 leading-[0.85] uppercase tracking-tighter text-foreground">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-8 leading-[0.9] uppercase tracking-tighter text-foreground">
               The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Architecture</span> <br/> of Tomorrow.
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl font-light">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl font-light">
               Architecting the future with scalable solutions for visionary growth.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-4 sm:gap-6">
           {bentoItems.map((item, index) => (
             <motion.div
               key={index}
@@ -94,7 +94,7 @@ export function BentoGrid() {
               transition={{ delay: index * 0.1, duration: 0.8 }}
               whileHover={{ y: -5 }}
               className={cn(
-                "group relative p-8 rounded-[2rem] border overflow-hidden transition-all duration-500",
+                "group relative p-5 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] border overflow-hidden transition-all duration-500",
                 item.className,
                 item.bg
               )}
@@ -111,16 +111,16 @@ export function BentoGrid() {
 
               <div className="relative z-10 h-full flex flex-col justify-between min-h-[200px]">
                 <div className="flex justify-between items-start">
-                  <div className={cn("p-4 bg-background/40 rounded-2xl backdrop-blur-xl border border-foreground/10", item.color)}>
-                    <item.icon className="w-8 h-8" />
+                  <div className={cn("p-3 sm:p-4 bg-background/40 rounded-xl sm:rounded-2xl backdrop-blur-xl border border-foreground/10", item.color)}>
+                    <item.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
                   <div className="p-2 bg-white/5 rounded-full backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
                     <ArrowUpRight className="w-5 h-5 text-foreground" />
                   </div>
                 </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-foreground leading-none tracking-tight">{item.title}</h3>
-                  <p className="text-muted-foreground text-base leading-snug font-light">{item.description}</p>
+                <div className="space-y-2 sm:space-y-3">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm sm:text-base leading-snug font-light line-clamp-2 sm:line-clamp-none">{item.description}</p>
                 </div>
               </div>
               

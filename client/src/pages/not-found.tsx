@@ -6,10 +6,10 @@ import { WemakeSpaceLogo } from "@/components/wemakespaceLogo";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background p-6 overflow-hidden relative">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -z-10" />
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background p-4 sm:p-6 overflow-hidden relative">
+      {/* Background Decorative Elements - smaller on mobile to avoid overflow */}
+      <div className="absolute top-1/4 left-1/4 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[500px] md:h-[500px] bg-primary/10 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] md:w-[400px] md:h-[400px] bg-secondary/10 rounded-full blur-[60px] sm:blur-[80px] md:blur-[100px] -z-10" />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -28,11 +28,11 @@ export default function NotFound() {
           <div className="flex justify-center mb-8">
             <WemakeSpaceLogo className={"rounded"} size={53} />
           </div>
-          <h1 className="text-8xl md:text-9xl font-black font-display mb-8 leading-[0.95] tracking-tighter text-foreground">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black font-display mb-4 sm:mb-6 md:mb-8 leading-[0.95] tracking-tighter text-foreground px-1">
             Lost in <br />
             <span className="text-primary italic">Space.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-lg mx-auto mb-12 font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-lg mx-auto mb-8 sm:mb-10 md:mb-12 font-light leading-relaxed px-2">
             The digital coordinates you're looking for don't exist. Let's get you back to the main hub.
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export default function NotFound() {
         transition={{ delay: 0.6, duration: 1 }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none -z-20"
       >
-        <div className="text-[6rem] sm:text-[10rem] md:text-[20rem] lg:text-[40rem] font-display font-black tracking-tighter select-none">
+        <div className="text-[4rem] sm:text-[6rem] md:text-[10rem] lg:text-[20rem] xl:text-[40rem] font-display font-black tracking-tighter select-none">
           404
         </div>
       </motion.div>

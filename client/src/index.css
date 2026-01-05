@@ -106,11 +106,20 @@
   * {
     @apply border-border transition-colors duration-500;
   }
+  html {
+    @apply overflow-x-hidden;
+  }
   body {
-    @apply font-sans antialiased bg-background text-foreground transition-colors duration-500;
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-500 overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tighter;
+  }
+  /* Minimum touch target size for accessibility on small devices */
+  @media (max-width: 640px) {
+    button, a[role="button"], [type="button"], [type="submit"] {
+      min-height: 44px;
+    }
   }
 }
 
