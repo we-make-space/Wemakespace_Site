@@ -41,6 +41,38 @@
 }
 
 :root {
+  --background: 0 0% 100%; /* Pure white */
+  --foreground: 240 10% 4%; /* Dark text */
+
+  --card: 0 0% 98%;
+  --card-foreground: 240 10% 4%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 4%;
+
+  --primary: 12 100% 61%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 16 96% 76%;
+  --secondary-foreground: 0 0% 24%;
+
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 5% 40%;
+
+  --accent: 12 100% 61%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 5% 90%;
+  --input: 240 5% 90%;
+  --ring: 12 100% 61%;
+
+  --radius: 1.25rem;
+}
+
+.dark {
   --background: 240 10% 4%; /* Near black for tech feel */
   --foreground: 0 0% 100%;
 
@@ -68,20 +100,32 @@
   --border: 240 5% 15%;
   --input: 240 5% 15%;
   --ring: 12 100% 61%;
-
-  --radius: 1.25rem;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-500;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-500;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tighter;
   }
+}
+
+/* Ensure background and text colors transition smoothly */
+:root, .dark {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Specific elements that need smooth theme transitions */
+.bg-background, .bg-card, .bg-popover, .bg-muted, .bg-accent {
+  transition: background-color 0.5s ease;
+}
+
+.text-foreground, .text-card-foreground, .text-popover-foreground, .text-muted-foreground, .text-accent-foreground {
+  transition: color 0.5s ease;
 }
 
 .selection\:bg-primary\/20 ::selection {
