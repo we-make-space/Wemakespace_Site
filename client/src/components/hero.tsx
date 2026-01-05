@@ -1,70 +1,126 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import softwareHero from "@assets/generated_images/futuristic_digital_workspace_with_floating_ui_elements..png";
 import { ArrowRight, Code, Sparkles, Cpu } from "lucide-react";
+import { useRef } from "react";
 
 export function Hero() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
+  const yTranslate = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+    <section ref={targetRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Parallax Background */}
+      <motion.div style={{ opacity, scale }} className="absolute inset-0 z-0">
         <img
           src={softwareHero}
           alt="Digital Engineering"
-          className="w-full h-full object-cover opacity-60 scale-110 blur-[2px]"
+          className="w-full h-full object-cover opacity-40 scale-110 blur-[1px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background" />
+      </motion.div>
 
       <div className="container relative z-10 px-6 mx-auto">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
+        <motion.div 
+          style={{ y: yTranslate, opacity }}
+          className="max-w-5xl mx-auto text-center space-y-8"
+        >
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            initial={ { opacity: 0, y: 30 } }
+            animate={ { opacity: 1, y: 0 } }
+            transition={ { duration: 1, ease: [0.16, 1, 0.3, 1] } }
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
-              <Sparkles className="w-4 h-4" /> Next-Gen Software Studio
-            </span>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-extrabold text-foreground leading-[0.85] tracking-tight">
-              We build <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x">
-                digital space.
+            <motion.span 
+              initial={ { opacity: 0, scale: 0.8 } }
+              animate={ { opacity: 1, scale: 1 } }
+              transition={ { delay: 0.2 } }
+              className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-12 backdrop-blur-2xl shadow-[0_0_20px_rgba(255,94,54,0.1)]"
+            >
+              <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Studio
+            </motion.span>
+            <h1 className="text-7xl md:text-9xl lg:text-[11rem] font-display font-black text-white leading-[0.8] tracking-tighter mb-8">
+              <span className="block overflow-hidden">
+                <motion.span
+                  initial={ { y: "100%" } }
+                  animate={ { y: 0 } }
+                  transition={ { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 } }
+                  className="block"
+                >
+                  We build
+                </motion.span>
+              </span>
+              <span className="block overflow-hidden">
+                <motion.span
+                  initial={ { y: "100%" } }
+                  animate={ { y: 0 } }
+                  transition={ { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 } }
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x block"
+                >
+                  digital space.
+                </motion.span>
               </span>
             </h1>
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light"
+            initial={ { opacity: 0 } }
+            animate={ { opacity: 1 } }
+            transition={ { duration: 1, delay: 0.6 } }
+            className="text-xl md:text-3xl text-muted-foreground/80 max-w-3xl mx-auto leading-tight font-light tracking-tight"
           >
             Engineering seamless digital experiences. We create high-performance 
             software that makes room for your business to scale.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            initial={ { opacity: 0, y: 20 } }
+            animate={ { opacity: 1, y: 0 } }
+            transition={ { duration: 0.8, delay: 0.8 } }
+            className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
           >
-            <button className="w-full sm:w-auto px-10 py-5 bg-primary text-primary-foreground rounded-2xl font-bold text-lg hover:shadow-[0_0_40px_-10px_rgba(255,94,54,0.5)] transition-all hover:-translate-y-1 flex items-center justify-center gap-3 group">
-              Start Building
-              <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-            </button>
-            <button className="w-full sm:w-auto px-10 py-5 bg-white/5 border border-white/10 text-foreground rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-xl flex items-center justify-center gap-3">
+            <motion.button 
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto px-12 py-6 bg-primary text-primary-foreground rounded-full font-black text-xl hover:shadow-[0_0_50px_-10px_rgba(255,94,54,0.6)] transition-all flex items-center justify-center gap-4 group relative overflow-hidden"
+            >
+              <span className="relative z-10">Start Building</span>
+              <Code className="w-6 h-6 group-hover:rotate-[360deg] transition-transform duration-700 relative z-10" />
+              <motion.div 
+                className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"
+                initial={false}
+              />
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05, background: "rgba(255,255,255,0.1)" }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto px-12 py-6 bg-white/5 border border-white/10 text-white rounded-full font-black text-xl transition-all backdrop-blur-3xl flex items-center justify-center gap-4 group"
+            >
               View Stack
-              <Cpu className="w-5 h-5" />
-            </button>
+              <Cpu className="w-6 h-6 group-hover:scale-125 transition-transform" />
+            </motion.button>
           </motion.div>
         </div>
       </div>
       
       {/* Animated Code Grid Lines */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-20 [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#FF5E3615_1px,transparent_1px),linear-gradient(to_bottom,#FF5E3615_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
+
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground/40 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-primary/50 to-transparent" />
+      </motion.div>
     </section>
   );
 }
