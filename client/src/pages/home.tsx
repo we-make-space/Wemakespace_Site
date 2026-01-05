@@ -1,6 +1,8 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { BentoGrid } from "@/components/bento-grid";
+import { Features } from "@/components/features";
+import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -10,6 +12,8 @@ export default function Home() {
       <main>
         <Hero />
         <BentoGrid />
+        <Features />
+        <Testimonials />
         
         {/* Simple CTA Section */}
         <section className="py-24 px-6 container mx-auto text-center">
