@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { BentoGrid } from "@/components/bento-grid";
