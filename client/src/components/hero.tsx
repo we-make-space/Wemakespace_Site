@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import heroImage from "@assets/generated_images/abstract_3d_architectural_spatial_composition_with_orange_and_neutral_tones..png";
-import { ArrowRight } from "lucide-react";
+import softwareHero from "@assets/generated_images/futuristic_digital_workspace_with_floating_ui_elements..png";
+import { ArrowRight, Code, Sparkles, Cpu } from "lucide-react";
 
 export function Hero() {
   return (
@@ -8,27 +8,27 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
-          alt="Abstract Spatial Design"
-          className="w-full h-full object-cover"
+          src={softwareHero}
+          alt="Digital Engineering"
+          className="w-full h-full object-cover opacity-60 scale-110 blur-[2px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       </div>
 
       <div className="container relative z-10 px-6 mx-auto">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-semibold mb-6 backdrop-blur-sm">
-              Reimagining Spaces
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
+              <Sparkles className="w-4 h-4" /> Next-Gen Software Studio
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground leading-[0.9] tracking-tighter">
-              Making room <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                for you
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-extrabold text-foreground leading-[0.85] tracking-tight">
+              We build <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x">
+                digital space.
               </span>
             </h1>
           </motion.div>
@@ -36,46 +36,35 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light"
           >
-            We transform ordinary environments into extraordinary experiences. 
-            Spatial design that breathes, functions, and inspires.
+            Engineering seamless digital experiences. We create high-performance 
+            software that makes room for your business to scale.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
-            <button className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:bg-primary/90 transition-transform hover:scale-105 flex items-center justify-center gap-2 group">
-              Start Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <button className="w-full sm:w-auto px-10 py-5 bg-primary text-primary-foreground rounded-2xl font-bold text-lg hover:shadow-[0_0_40px_-10px_rgba(255,94,54,0.5)] transition-all hover:-translate-y-1 flex items-center justify-center gap-3 group">
+              Start Building
+              <Code className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             </button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-background/50 border border-input text-foreground rounded-full font-semibold text-lg hover:bg-background/80 transition-colors backdrop-blur-sm">
-              View Portfolio
+            <button className="w-full sm:w-auto px-10 py-5 bg-white/5 border border-white/10 text-foreground rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-xl flex items-center justify-center gap-3">
+              View Stack
+              <Cpu className="w-5 h-5" />
             </button>
           </motion.div>
         </div>
       </div>
       
-      {/* Decorative floating elements */}
-      <motion.div 
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 left-10 hidden md:block"
-      >
-        <div className="w-24 h-24 rounded-2xl border-2 border-primary/20 backdrop-blur-sm" />
-      </motion.div>
-      
-      <motion.div 
-        animate={{ y: [0, 30, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-40 right-10 hidden md:block"
-      >
-        <div className="w-32 h-32 rounded-full border-2 border-secondary/30 backdrop-blur-sm" />
-      </motion.div>
+      {/* Animated Code Grid Lines */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-20 [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+      </div>
     </section>
   );
 }
