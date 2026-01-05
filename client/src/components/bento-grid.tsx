@@ -86,13 +86,13 @@ export function BentoGrid() {
             >
               <div className="relative z-10 h-full flex flex-col justify-between">
                 <div className="flex justify-between items-start">
-                  <div className={cn("p-5 bg-black/50 rounded-[1.5rem] backdrop-blur-2xl border border-white/10", item.color)}>
+                  <div className={cn("p-5 bg-background/50 rounded-[1.5rem] backdrop-blur-2xl border border-foreground/10", item.color)}>
                     <item.icon className="w-10 h-10" />
                   </div>
-                  <ArrowUpRight className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <ArrowUpRight className="w-6 h-6 text-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-3xl font-bold text-white leading-none tracking-tighter">{item.title}</h3>
+                  <h3 className="text-3xl font-bold text-foreground leading-none tracking-tighter">{item.title}</h3>
                   <p className="text-muted-foreground text-lg leading-snug font-light">{item.description}</p>
                 </div>
               </div>

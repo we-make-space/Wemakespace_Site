@@ -38,9 +38,9 @@ export function Nav() {
           <Link href="/">
             <a className="group flex items-center gap-3">
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                <Terminal className="w-6 h-6 text-white" />
+                <Terminal className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-2xl font-display font-black text-white tracking-tighter">
+              <span className="text-2xl font-display font-black text-foreground tracking-tighter">
                 Wemakespace<span className="text-primary">.</span>
               </span>
             </a>
@@ -53,7 +53,7 @@ export function Nav() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 whileHover={{ y: -2 }}
-                className="text-sm font-bold uppercase tracking-widest text-white/60 hover:text-primary transition-colors relative group"
+                className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors relative group"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -65,7 +65,7 @@ export function Nav() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary text-white px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,94,54,0.4)] transition-all"
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,94,54,0.4)] transition-all"
             >
               Start Project
             </motion.button>
@@ -75,7 +75,7 @@ export function Nav() {
           <div className="md:hidden flex items-center gap-4">
             <ThemeToggle />
             <button
-              className="w-12 h-12 flex items-center justify-center text-white"
+              className="w-12 h-12 flex items-center justify-center text-foreground"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -94,7 +94,7 @@ export function Nav() {
       <motion.div
         initial={false}
         animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
-        className="fixed inset-0 bg-black/95 backdrop-blur-3xl z-[90] md:hidden flex flex-col items-center justify-center gap-12"
+        className="fixed inset-0 bg-background/95 backdrop-blur-3xl z-[90] md:hidden flex flex-col items-center justify-center gap-12"
       >
         {["Stack", "Solutions", "Lab", "Vision"].map((item, i) => (
           <motion.a
@@ -103,13 +103,13 @@ export function Nav() {
             animate={isOpen ? { opacity: 1, y: 0 } : {}}
             transition={ { delay: i * 0.1 } }
             href={`#${item.toLowerCase()}`}
-            className="text-5xl font-display font-black text-white hover:text-primary transition-colors"
+            className="text-5xl font-display font-black text-foreground hover:text-primary transition-colors"
             onClick={() => setIsOpen(false)}
           >
             {item}
           </motion.a>
         ))}
-        <button className="mt-8 bg-primary text-white px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest">
+        <button className="mt-8 bg-primary text-primary-foreground px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest">
           Get Started
         </button>
       </motion.div>
