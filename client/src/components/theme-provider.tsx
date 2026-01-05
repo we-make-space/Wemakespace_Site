@@ -19,7 +19,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(prev => prev === "light" ? "dark" : "high-end-software-studio-dark");
+  const toggleTheme = () => setTheme(prev => prev === "light" ? "dark" : "light");
 
   return (
     <div className="contents">
