@@ -1,13 +1,34 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { Link } from "wouter";
 import { Terminal, Shield, Zap, Globe, Cpu, Database, Mail, ArrowRight, MessageSquare, Briefcase, Rocket } from "lucide-react";
 
 export default function Solutions() {
   const solutions = [
-    { title: "SaaS Platforms", icon: Rocket, desc: "Building scalable, multi-tenant cloud applications." },
-    { title: "AI Integration", icon: Cpu, desc: "Injecting machine learning into existing workflows." },
-    { title: "Enterprise Infrastructure", icon: Shield, desc: "High-security distributed systems." },
-    { title: "Real-time Engines", icon: Zap, desc: "Low-latency data synchronization at scale." },
+    { 
+      title: "SaaS Platforms", 
+      slug: "saas-platforms",
+      icon: Rocket, 
+      desc: "Building scalable, multi-tenant cloud applications." 
+    },
+    { 
+      title: "AI Integration", 
+      slug: "ai-integration",
+      icon: Cpu, 
+      desc: "Injecting machine learning into existing workflows." 
+    },
+    { 
+      title: "Enterprise Infrastructure", 
+      slug: "enterprise-infrastructure",
+      icon: Shield, 
+      desc: "High-security distributed systems." 
+    },
+    { 
+      title: "Real-time Sync", 
+      slug: "real-time-sync",
+      icon: Zap, 
+      desc: "Low-latency data synchronization at scale." 
+    },
   ];
 
   return (
@@ -41,9 +62,11 @@ export default function Solutions() {
               </div>
               <h3 className="text-3xl font-bold font-display mb-4">{solution.title}</h3>
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">{solution.desc}</p>
-              <button className="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm group-hover:gap-4 transition-all">
-                Learn More <ArrowRight className="w-4 h-4" />
-              </button>
+              <Link href={`/solutions/${solution.slug}`}>
+                <a className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm group-hover:gap-4 transition-all">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </a>
+              </Link>
             </motion.div>
           ))}
         </div>
