@@ -48,16 +48,21 @@ export function Nav() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
-            {["Stack", "Solutions", "Lab", "Vision"].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                whileHover={{ y: -2 }}
-                className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </motion.a>
+            {[
+              { name: "Stack", path: "/stack" },
+              { name: "Solutions", path: "/solutions" },
+              { name: "Lab", path: "#lab" },
+              { name: "Vision", path: "#vision" }
+            ].map((item) => (
+              <Link key={item.name} href={item.path}>
+                <motion.a
+                  whileHover={{ y: -2 }}
+                  className="text-sm font-bold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors relative group cursor-pointer"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </motion.a>
+              </Link>
             ))}
             
             <ThemeToggle />
@@ -96,18 +101,23 @@ export function Nav() {
         animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
         className="fixed inset-0 bg-background/95 backdrop-blur-3xl z-[90] md:hidden flex flex-col items-center justify-center gap-12"
       >
-        {["Stack", "Solutions", "Lab", "Vision"].map((item, i) => (
-          <motion.a
-            key={item}
-            initial={ { opacity: 0, y: 20 } }
-            animate={isOpen ? { opacity: 1, y: 0 } : {}}
-            transition={ { delay: i * 0.1 } }
-            href={`#${item.toLowerCase()}`}
-            className="text-5xl font-display font-black text-foreground hover:text-primary transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            {item}
-          </motion.a>
+        {[
+          { name: "Stack", path: "/stack" },
+          { name: "Solutions", path: "/solutions" },
+          { name: "Lab", path: "#lab" },
+          { name: "Vision", path: "#vision" }
+        ].map((item, i) => (
+          <Link key={item.name} href={item.path}>
+            <motion.a
+              initial={ { opacity: 0, y: 20 } }
+              animate={isOpen ? { opacity: 1, y: 0 } : {}}
+              transition={ { delay: i * 0.1 } }
+              className="text-5xl font-display font-black text-foreground hover:text-primary transition-colors cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </motion.a>
+          </Link>
         ))}
         <button className="mt-8 bg-primary text-primary-foreground px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest">
           Get Started
