@@ -6,6 +6,7 @@ import Home from "@/pages/home";
 import Stack from "@/pages/stack";
 import Solutions from "@/pages/solutions";
 import SolutionDetail from "@/pages/solution-detail";
+import Vision from "@/pages/vision";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path="/stack" component={Stack} />
       <Route path="/solutions" component={Solutions} />
       <Route path="/solutions/:slug" component={SolutionDetail} />
+      <Route path="/vision" component={Vision} />
       <Route component={NotFound} />
     </Switch>
   );
