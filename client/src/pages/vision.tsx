@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Eye, Target, Rocket, Users, MessageCircle, Twitter, Linkedin, Github } from "lucide-react";
 
+import { Footer } from "@/components/footer";
+
 const leaders = [
   {
     name: "Alex Rivera",
@@ -157,6 +159,7 @@ export default function Vision() {
           </motion.div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

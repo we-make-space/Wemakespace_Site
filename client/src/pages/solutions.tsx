@@ -3,6 +3,8 @@ import { Nav } from "@/components/nav";
 import { Link } from "wouter";
 import { Terminal, Shield, Zap, Globe, Cpu, Database, Mail, ArrowRight, MessageSquare, Briefcase, Rocket } from "lucide-react";
 
+import { Footer } from "@/components/footer";
+
 export default function Solutions() {
   const solutions = [
     { 
@@ -85,6 +87,7 @@ export default function Solutions() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

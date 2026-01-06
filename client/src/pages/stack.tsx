@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Terminal, Shield, Zap, Globe, Cpu, Database, Layout, Search, Mail, ArrowRight } from "lucide-react";
 
+import { Footer } from "@/components/footer";
+
 export default function Stack() {
   const stackItems = [
     { name: "React 19", category: "Frontend", icon: Layout, color: "text-blue-400" },
@@ -65,6 +67,7 @@ export default function Stack() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
         </motion.section>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -8,6 +8,8 @@ import {
   Layout, Sparkles, MessageSquare 
 } from "lucide-react";
 
+import { Footer } from "@/components/footer";
+
 const solutionDetails = {
   "saas-platforms": {
     title: "SaaS Platforms",
@@ -150,6 +152,7 @@ export default function SolutionDetail() {
           </motion.div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
