@@ -25,6 +25,20 @@ const leaders = [
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
     bio: "Minimalist designer dedicated to crafting digital interfaces that feel as natural as physical space.",
     message: "Design is the invisible hand that makes complex technology feel like magic."
+  },
+  {
+    name: "Elena Vance",
+    role: "Director of Operations",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    bio: "Operational strategist ensuring seamless delivery of complex digital transformations.",
+    message: "Scale is about more than numbers; it's about the quality of the room we build."
+  },
+  {
+    name: "Jordan Hayes",
+    role: "Lead Systems Architect",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
+    bio: "Infrastructure expert specializing in zero-latency global delivery and edge computing.",
+    message: "Engineering excellence is the prerequisite for digital freedom."
   }
 ];
 
@@ -96,7 +110,7 @@ export default function Vision() {
               <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter uppercase">Our Leadership</h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
               {leaders.map((leader, i) => (
                 <motion.div
                   key={leader.name}
