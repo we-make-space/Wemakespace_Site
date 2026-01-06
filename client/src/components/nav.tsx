@@ -47,7 +47,7 @@ export function Nav() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {[
               { name: "Platforms", path: "/stack" },
               { name: "Solutions", path: "/solutions" },
@@ -77,13 +77,13 @@ export function Nav() {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4">
             <ThemeToggle />
             <button
-              className="w-12 h-12 flex items-center justify-center text-foreground"
+              className="w-12 h-12 flex items-center justify-center text-foreground transition-transform active:scale-90"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+              {isOpen ? <X className="w-8 h-8 text-primary" /> : <Menu className="w-8 h-8" />}
             </button>
           </div>
         </motion.div>
@@ -99,7 +99,7 @@ export function Nav() {
       <motion.div
         initial={false}
         animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
-        className="fixed inset-0 bg-background/95 backdrop-blur-3xl z-[90] md:hidden flex flex-col items-center justify-center gap-12"
+        className="fixed inset-0 bg-background/98 backdrop-blur-3xl z-[90] lg:hidden flex flex-col items-center justify-center gap-12"
       >
         {[
           { name: "Platforms", path: "/stack" },
@@ -119,7 +119,7 @@ export function Nav() {
             </motion.a>
           </Link>
         ))}
-        <button className="mt-8 bg-primary text-primary-foreground px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest">
+        <button className="mt-8 bg-primary text-primary-foreground px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest hover:scale-105 transition-transform">
           Get Started
         </button>
       </motion.div>
