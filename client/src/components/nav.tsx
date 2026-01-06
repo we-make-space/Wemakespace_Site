@@ -51,8 +51,9 @@ export function Nav() {
             {[
               { name: "Stack", path: "/stack" },
               { name: "Solutions", path: "/solutions" },
-              { name: "Lab", path: "#lab" },
-              { name: "Vision", path: "#vision" }
+              { name: "Case Studies", path: "/cases" },
+              { name: "Studio", path: "/studio" },
+              { name: "Vision", path: "/vision" }
             ].map((item) => (
               <Link key={item.name} href={item.path}>
                 <motion.a
@@ -104,8 +105,9 @@ export function Nav() {
         {[
           { name: "Stack", path: "/stack" },
           { name: "Solutions", path: "/solutions" },
-          { name: "Lab", path: "#lab" },
-          { name: "Vision", path: "#vision" }
+          { name: "Case Studies", path: "/cases" },
+          { name: "Studio", path: "/studio" },
+          { name: "Vision", path: "/vision" }
         ].map((item, i) => (
           <Link key={item.name} href={item.path}>
             <motion.a
