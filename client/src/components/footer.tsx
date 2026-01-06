@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 export function Footer() {
   return (
     <footer className="bg-foreground text-background py-16">
@@ -15,19 +17,19 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Sitemap</h4>
             <ul className="space-y-2 text-neutral-400">
-              <li><a href="#" className="hover:text-primary transition-colors">Work</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
+              <li><Link href="/stack" className="hover:text-primary transition-colors cursor-pointer">Platforms</Link></li>
+              <li><Link href="/solutions" className="hover:text-primary transition-colors cursor-pointer">Solutions</Link></li>
+              <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Case Studies</Link></li>
+              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Vision</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold mb-4">Connect</h4>
+            <h4 className="font-bold mb-4">Studio</h4>
             <ul className="space-y-2 text-neutral-400">
-              <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Twitter</a></li>
+              <li><Link href="/studio" className="hover:text-primary transition-colors cursor-pointer">Our Studio</Link></li>
+              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Team</Link></li>
+              <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Insights</Link></li>
             </ul>
           </div>
         </div>

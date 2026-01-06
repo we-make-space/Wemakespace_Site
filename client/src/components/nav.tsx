@@ -49,10 +49,9 @@ export function Nav() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
             {[
-              { name: "Stack", path: "/stack" },
+              { name: "Platforms", path: "/stack" },
               { name: "Solutions", path: "/solutions" },
-              { name: "Case Studies", path: "/cases" },
-              { name: "Studio", path: "/studio" },
+              { name: "Insights", path: "/cases" },
               { name: "Vision", path: "/vision" }
             ].map((item) => (
               <Link key={item.name} href={item.path}>
@@ -103,10 +102,9 @@ export function Nav() {
         className="fixed inset-0 bg-background/95 backdrop-blur-3xl z-[90] md:hidden flex flex-col items-center justify-center gap-12"
       >
         {[
-          { name: "Stack", path: "/stack" },
+          { name: "Platforms", path: "/stack" },
           { name: "Solutions", path: "/solutions" },
-          { name: "Case Studies", path: "/cases" },
-          { name: "Studio", path: "/studio" },
+          { name: "Insights", path: "/cases" },
           { name: "Vision", path: "/vision" }
         ].map((item, i) => (
           <Link key={item.name} href={item.path}>
