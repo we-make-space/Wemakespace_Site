@@ -12,6 +12,8 @@ import {
   ChevronRight
 } from "lucide-react";
 
+import futuristicSpatialUI from "@assets/generated_images/futuristic_3d_spatial_user_interface_mockup.png";
+
 const platforms = [
   {
     id: "hives",
@@ -47,18 +49,15 @@ export default function Stack() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative h-[80vh] rounded-[4rem] overflow-hidden bg-muted border border-foreground/5 flex flex-col items-center justify-center text-center p-12"
+            className="relative h-[80vh] rounded-[4rem] overflow-hidden bg-muted border border-foreground/5 flex flex-col items-center justify-center text-center p-12 group"
           >
             <div className="absolute inset-0 z-0">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10" />
-              <motion.div 
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  opacity: [0.3, 0.5, 0.3]
-                }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="w-full h-full bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_70%)] opacity-30 blur-[100px]"
+              <img 
+                src={futuristicSpatialUI} 
+                alt="AetherOS Spatial UI" 
+                className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2000ms]"
               />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />
             </div>
 
             <div className="relative z-20 space-y-6 max-w-4xl">
@@ -66,11 +65,11 @@ export default function Stack() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="px-6 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-[0.2em] uppercase border border-primary/20 backdrop-blur-xl"
+                className="px-6 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-[0.2em] uppercase border border-primary/20 backdrop-blur-xl inline-block"
               >
                 Featured Release
               </motion.span>
-              <h1 className="text-6xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] uppercase">
+              <h1 className="text-6xl md:text-9xl font-display font-black tracking-tighter leading-[0.85] uppercase text-foreground">
                 AetherOS <br/> <span className="text-primary italic">Spatial UI.</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
@@ -92,7 +91,7 @@ export default function Stack() {
             <p className="text-xl text-muted-foreground font-light max-w-xl">Bespoke ecosystems engineered for specific industries.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {platforms.map((platform, i) => (
               <motion.div
                 key={platform.id}
@@ -100,7 +99,7 @@ export default function Stack() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                className={`relative group overflow-hidden rounded-[3.5rem] border border-foreground/5 bg-muted md:col-span-${i === 0 ? '7' : '5'} aspect-square md:aspect-auto md:h-[600px] flex flex-col`}
+                className="relative group overflow-hidden rounded-[3.5rem] border border-foreground/5 bg-muted aspect-[4/5] md:aspect-auto md:h-[700px] flex flex-col"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${platform.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
                 
