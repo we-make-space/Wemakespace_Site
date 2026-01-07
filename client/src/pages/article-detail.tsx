@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { SEO } from "@/components/seo";
 import { Footer } from "@/components/footer";
 import { useParams, Link } from "wouter";
 import { 
@@ -85,6 +86,7 @@ export default function ArticleDetail() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO title={article.title} description={article.title} />
       <Nav />
       
       <main className="pt-32 pb-40">

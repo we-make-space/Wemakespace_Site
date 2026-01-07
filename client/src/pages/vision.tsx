@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { SEO } from "@/components/seo";
 import { Eye, Target, Rocket, Users, MessageCircle, Twitter, Linkedin, Github } from "lucide-react";
 
 import { Footer } from "@/components/footer";
@@ -45,6 +46,7 @@ const leaders = [
 export default function Vision() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO title="Vision" description="Defining the architectural standards of the next digital era." />
       <Nav />
       <main className="pt-32 pb-20">
         {/* Hero Section */}

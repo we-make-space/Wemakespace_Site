@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { SEO } from "@/components/seo";
 import { Link } from "wouter";
 import { Terminal, Shield, Zap, Globe, Cpu, Database, Mail, ArrowRight, MessageSquare, Briefcase, Rocket } from "lucide-react";
 
@@ -35,6 +36,7 @@ export default function Solutions() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO title="Solutions" description="We solve complex engineering challenges for forward-thinking companies." />
       <Nav />
       <main className="pt-32 pb-20 container px-6 mx-auto">
         <motion.div
