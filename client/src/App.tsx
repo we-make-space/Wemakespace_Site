@@ -9,6 +9,8 @@ import SolutionDetail from "@/pages/solution-detail";
 import Vision from "@/pages/vision";
 import Insights from "@/pages/cases";
 import ArticleDetail from "@/pages/article-detail";
+import PrivacyPolicy from "@/pages/privacy";
+import Terms from "@/pages/terms";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +23,8 @@ function Router() {
       <Route path="/vision" component={Vision} />
       <Route path="/cases" component={Insights} />
       <Route path="/insights/:id" component={ArticleDetail} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={Terms} />
       <Route component={NotFound} />
     </Switch>
   );
