@@ -27,8 +27,8 @@ export function Footer() {
           <div>
             <h4 className="font-bold mb-4">Studio</h4>
             <ul className="space-y-2 text-neutral-400">
-              <li><Link href="/studio" className="hover:text-primary transition-colors cursor-pointer">Our Studio</Link></li>
-              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Team</Link></li>
+              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Our Studio</Link></li>
+              <li><Link href="/team" className="hover:text-primary transition-colors cursor-pointer">Team</Link></li>
               <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Insights</Link></li>
             </ul>
           </div>
