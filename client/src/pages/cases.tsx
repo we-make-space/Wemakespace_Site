@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { SEO } from "@/components/seo";
 import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import { 
@@ -71,6 +72,7 @@ const articles = [
 export default function Insights() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO title="Insights" description="Our latest thinking on spatial UI, digital architecture, and engineering for resonance." />
       <Nav />
       
       <main className="pt-32 pb-40">

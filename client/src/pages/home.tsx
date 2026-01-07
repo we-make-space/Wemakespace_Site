@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { SEO } from "@/components/seo";
 import { Hero } from "@/components/hero";
 import { BentoGrid } from "@/components/bento-grid";
 import { TechSpecs } from "@/components/tech-specs";
@@ -15,6 +16,7 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+      <SEO title="Home" description="Building the future of spatial computing and digital resonance." />
       <Nav />
       <main>
         <Hero />

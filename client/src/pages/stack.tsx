@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
+import { SEO } from "@/components/seo";
 import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import { 
@@ -40,6 +41,7 @@ const platforms = [
 export default function Stack() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+      <SEO title="Platforms" description="Explore the Wemakespace ecosystem of high-performance digital platforms." />
       <Nav />
       
       <main className="pt-32">
