@@ -32,8 +32,14 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") {
+      setTheme(saved);
+      document.documentElement.classList.remove("light", "dark");
+      document.documentElement.classList.add(saved);
+    } else {
+      document.documentElement.classList.add("dark");
+    }
   }, []);
 
   const toggle = () => {
