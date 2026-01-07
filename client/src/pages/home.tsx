@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
 import { Hero } from "@/components/hero";
@@ -12,8 +13,10 @@ import { ProjectShowcase } from "@/components/project-showcase";
 import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
+import { ContactModal } from "@/components/contact-modal";
 
 export default function Home() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   return (
     <div className="min-h-screen bg-black text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       <SEO title="Home" description="Building the future of spatial computing and digital resonance." />
@@ -30,7 +33,7 @@ export default function Home() {
         <Process />
         <Testimonials />
         
-        {/* Extreme CTA Section */}
+        {/* Final CTA / Connect Section */}
         <section className="py-40 px-6 container mx-auto text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,#FF5E3615,transparent)]" />
           
@@ -48,17 +51,31 @@ export default function Home() {
             <p className="text-2xl text-muted-foreground mb-16 max-w-2xl mx-auto font-light leading-relaxed">
               We specialize in engineering high-performance digital ecosystems. If it's useful, we build it well and connect it to the world.
             </p>
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(255,94,54,0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary text-white px-16 py-8 rounded-full font-black text-2xl uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(255,94,54,0.3)]"
-            >
-              Connect Now
-            </motion.button>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(255,94,54,0.5)" }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsContactOpen(true)}
+                className="w-full sm:w-auto bg-primary text-white px-16 py-8 rounded-full font-black text-2xl uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(255,94,54,0.3)]"
+              >
+                Connect Now
+              </motion.button>
+              
+              <motion.button 
+                whileHover={{ scale: 1.05, background: "rgba(255,255,255,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsContactOpen(true)}
+                className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-16 py-8 rounded-full font-black text-2xl uppercase tracking-[0.2em] backdrop-blur-xl"
+              >
+                Start Project
+              </motion.button>
+            </div>
           </motion.div>
         </section>
       </main>
       <Footer showCTA={true} />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </div>
   );
 }
