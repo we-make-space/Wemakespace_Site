@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import softwareHero from "@assets/generated_images/futuristic_digital_workspace_with_floating_ui_elements..png";
 import { Code, Sparkles, Cpu } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { ContactModal } from "./contact-modal";
 
 export function Hero() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -87,6 +89,7 @@ export function Hero() {
             <motion.button 
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setIsContactOpen(true)}
               className="w-full sm:w-auto px-12 py-6 bg-primary text-primary-foreground rounded-full font-black text-xl hover:shadow-[0_0_50px_-10px_rgba(255,94,54,0.6)] transition-all flex items-center justify-center gap-4 group relative overflow-hidden"
             >
               <span className="relative z-10">Start Building</span>
@@ -107,6 +110,8 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       
       {/* Animated Code Grid Lines */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent)]">
