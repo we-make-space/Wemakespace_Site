@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useState } from "react";
 import { ContactModal } from "./contact-modal";
-import { ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
+import newsletterImage from "@assets/stock_images/modern_futuristic_te_6e525343.jpg";
 
 interface FooterProps {
   showCTA?: boolean;
@@ -10,34 +11,53 @@ interface FooterProps {
 
 export function Footer({ showCTA = false }: FooterProps) {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [email, setEmail] = useState("");
 
   return (
     <footer className="bg-foreground text-background py-16 relative overflow-hidden">
-      {/* Dynamic CTA Section */}
+      {/* Newsletter CTA Section */}
       {showCTA && (
         <div className="container px-6 mx-auto mb-32">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary p-12 md:p-24 rounded-[3rem] text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-12 group"
+            className="bg-primary/10 border border-primary/20 p-8 md:p-12 rounded-[3rem] text-foreground flex flex-col md:flex-row items-center gap-12 overflow-hidden relative"
           >
-            <div className="max-w-2xl">
-              <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter uppercase leading-none mb-8">
-                Ready to <br/><span className="italic">Resonate?</span>
+            <div className="absolute inset-0 opacity-10 z-0">
+              <img src={newsletterImage} alt="Newsletter Background" className="w-full h-full object-cover" />
+            </div>
+            
+            <div className="relative z-10 flex-1">
+              <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter uppercase leading-none mb-6">
+                Stay in the <br/><span className="text-primary italic">Resonance.</span>
               </h2>
-              <p className="text-xl md:text-2xl font-light opacity-90 leading-tight">
-                We're currently accepting high-impact projects for Q1 2026. Let's build something extraordinary together.
+              <p className="text-lg md:text-xl font-light text-muted-foreground leading-tight max-w-xl">
+                Get the latest insights on spatial UI, high-performance ecosystems, and digital architecture delivered to your inbox.
               </p>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsContactOpen(true)}
-              className="bg-white text-primary px-12 py-6 rounded-full font-black text-xl uppercase tracking-widest hover:shadow-2xl transition-all flex items-center gap-4 whitespace-nowrap"
-            >
-              Start Project <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-            </motion.button>
+
+            <div className="relative z-10 w-full md:w-auto min-w-[320px]">
+              <div className="flex flex-col gap-4">
+                <div className="relative">
+                  <input 
+                    type="email" 
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-background border border-white/10 rounded-full py-4 px-6 text-foreground focus:border-primary outline-none transition-colors"
+                  />
+                  <Mail className="absolute right-6 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-primary text-white py-4 rounded-full font-black uppercase tracking-widest hover:shadow-xl transition-all flex items-center justify-center gap-3"
+                >
+                  Subscribe <ArrowRight size={18} />
+                </motion.button>
+              </div>
+            </div>
           </motion.div>
         </div>
       )}
