@@ -1,157 +1,160 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
-import { useParams, useLocation } from "wouter";
+import { Footer } from "@/components/footer";
+import { useParams, Link } from "wouter";
 import { 
-  Rocket, Cpu, Shield, Zap, 
-  ArrowLeft, CheckCircle2, Server, 
-  Globe, Lock, Database, Code, 
-  Layout, Sparkles, MessageSquare 
+  ArrowLeft, 
+  ExternalLink, 
+  Download, 
+  Globe, 
+  Shield, 
+  Zap, 
+  Cpu 
 } from "lucide-react";
 
-import { Footer } from "@/components/footer";
-
-const solutionDetails = {
-  "saas-platforms": {
-    title: "SaaS Platforms",
-    icon: Rocket,
-    desc: "Building scalable, multi-tenant cloud applications.",
-    features: [
-      "Multi-tenant Architecture",
-      "Dynamic Subscription Engines",
-      "Real-time Analytics Dashboards",
-      "Automated Provisioning Systems"
+const platformContent = {
+  hives: {
+    name: "Hives",
+    tagline: "The Future of Real Estate",
+    heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000&auto=format&fit=crop",
+    description: "Hives is a premium real estate ecosystem designed to bridge the gap between property discovery and institutional-grade investment management. Built on our proprietary spatial engine, Hives allows users to explore properties in high-fidelity 3D environments while accessing real-time market data and predictive analytics.",
+    sections: [
+      {
+        title: "Immersive Discovery",
+        content: "Forget static photos. Hives utilizes advanced photogrammetry to create digital twins of every property. Walk through your future home from anywhere in the world with zero latency.",
+        icon: Globe
+      },
+      {
+        title: "Smart Valuation Engine",
+        content: "Our AI-driven valuation models analyze over 200 data points including historical trends, local development plans, and even environmental factors to provide the most accurate asset pricing on the market.",
+        icon: Cpu
+      }
     ],
-    detailed: "We specialize in engineering robust SaaS architectures that scale horizontally. From complex billing systems to distributed data isolation, our platforms are built for growth.",
-    stats: { performance: "99.99%", latency: "<50ms", scale: "Unlimited" }
+    appLink: "https://hives.wemakespace.com",
+    appType: "web"
   },
-  "ai-integration": {
-    title: "AI Integration",
-    icon: Cpu,
-    desc: "Injecting machine learning into existing workflows.",
-    features: [
-      "Custom LLM fine-tuning",
-      "Predictive Analytics Models",
-      "Computer Vision Systems",
-      "Automated Decision Engines"
+  fashnect: {
+    name: "Fashnect",
+    tagline: "Social Commerce Reimagined",
+    heroImage: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2000&auto=format&fit=crop",
+    description: "Fashnect is where high-fashion meets high-tech. It's more than a marketplace; it's a social discovery platform where creators, brands, and enthusiasts converge. By integrating augmented reality with social connectivity, Fashnect makes digital shopping feel human again.",
+    sections: [
+      {
+        title: "AR Virtual Try-on",
+        content: "See how the latest collections look on you instantly. Our low-latency AR engine provides hyper-realistic fabric simulation and fit visualization directly in your browser or mobile app.",
+        icon: Zap
+      },
+      {
+        title: "Social Ecosystem",
+        content: "Build your style profile, follow your favorite designers, and shop curated collections from the people you trust. Fashnect turns shopping into a shared experience.",
+        icon: Shield
+      }
     ],
-    detailed: "Moving beyond simple API calls, we integrate deep intelligence into your core business logic. We build custom models that learn from your unique data streams.",
-    stats: { accuracy: "98.5%", processing: "Real-time", training: "Weekly" }
-  },
-  "enterprise-infrastructure": {
-    title: "Enterprise Infrastructure",
-    icon: Shield,
-    desc: "High-security distributed systems.",
-    features: [
-      "Zero-trust Security Models",
-      "Distributed Mesh Networks",
-      "Compliance Automation (SOC2/GDPR)",
-      "Hybrid-cloud Orchestration"
-    ],
-    detailed: "Mission-critical systems require uncompromising stability. We design resilient infrastructure that protects your most sensitive data while maintaining peak performance.",
-    stats: { security: "Tier 4", uptime: "SLA backed", encryption: "E2E AES-256" }
-  },
-  "real-time-sync": {
-    title: "Real-time Sync",
-    icon: Zap,
-    desc: "Low-latency data synchronization at scale.",
-    features: [
-      "Edge-to-Edge Propagation",
-      "Conflict-free Replicated Data (CRDTs)",
-      "Websocket Mesh Networks",
-      "Offline-first Architecture"
-    ],
-    detailed: "Eliminate lag entirely. Our real-time engines ensure that every user across the globe stays in perfect synchronization, even under extreme load or intermittent connectivity.",
-    stats: { sync: "Global", latency: "10-20ms", concurrency: "1M+" }
+    appLink: "https://fashnect.wemakespace.com/download",
+    appType: "download"
   }
 };
 
 export default function SolutionDetail() {
-  const params = useParams();
-  const [, setLocation] = useLocation();
-  const slug = params.slug || "";
-  const data = solutionDetails[slug as keyof typeof solutionDetails];
+  const { slug } = useParams();
+  const content = platformContent[slug as keyof typeof platformContent];
 
-  if (!data) return null;
+  if (!content) return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <Link href="/stack">
+        <a className="text-primary hover:underline">Platform not found. Return to Platforms</a>
+      </Link>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <main className="pt-32 pb-20 container px-6 mx-auto">
-        <motion.button
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          onClick={() => setLocation("/solutions")}
-          className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-12 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Solutions
-        </motion.button>
+      
+      <main className="pt-32 pb-40">
+        <div className="container px-6 mx-auto">
+          {/* Back Button */}
+          <Link href="/stack">
+            <motion.button 
+              whileHover={{ x: -5 }}
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary mb-12 uppercase tracking-widest font-bold text-xs"
+            >
+              <ArrowLeft className="w-4 h-4" /> Back to Platforms
+            </motion.button>
+          </Link>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <div className="w-20 h-20 bg-primary/10 rounded-[2rem] border border-primary/20 flex items-center justify-center mb-8">
-              <data.icon className="w-10 h-10 text-primary" />
-            </div>
-            <h1 className="text-5xl md:text-7xl font-display font-black tracking-tighter mb-8 uppercase">
-              {data.title}<span className="text-primary">.</span>
-            </h1>
-            <p className="text-2xl text-muted-foreground font-light leading-relaxed mb-12">
-              {data.detailed}
-            </p>
-
-            <div className="grid sm:grid-cols-3 gap-8 py-12 border-y border-foreground/5 mb-12">
-              {Object.entries(data.stats).map(([key, value]) => (
-                <div key={key}>
-                  <div className="text-3xl font-display font-bold text-primary mb-1 uppercase tracking-tighter">{value}</div>
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-bold">{key}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold uppercase tracking-widest mb-6">Core Capabilities</h3>
-              <div className="grid gap-4">
-                {data.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-4 p-6 rounded-2xl bg-foreground/5 border border-foreground/5 group hover:border-primary/30 transition-all">
-                    <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
-                    <span className="text-lg font-medium">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="sticky top-40 p-12 rounded-[4rem] bg-muted border border-foreground/5 overflow-hidden group"
-          >
-            <div className="relative z-10 space-y-8">
-              <div className="flex items-center gap-3">
-                <Sparkles className="w-6 h-6 text-primary" />
-                <span className="font-mono text-sm uppercase tracking-[0.2em] font-bold">Implementation Roadmap</span>
-              </div>
-              <h2 className="text-4xl font-display font-bold">Ready to deploy?</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Our elite engineering team can integrate {data.title} into your stack in as little as 4 weeks.
+          {/* Hero Section */}
+          <div className="grid lg:grid-cols-2 gap-20 items-center mb-40">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="space-y-8"
+            >
+              <span className="px-6 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-[0.2em] uppercase border border-primary/20 inline-block">
+                Platform Insight
+              </span>
+              <h1 className="text-6xl lg:text-8xl font-display font-black tracking-tighter uppercase leading-none">
+                {content.name}<br/>
+                <span className="text-primary italic">{content.tagline.split(' ').slice(-1)}</span>
+              </h1>
+              <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-xl">
+                {content.description}
               </p>
               
-              <div className="pt-8 space-y-4">
-                <button className="w-full py-6 bg-primary text-primary-foreground rounded-full font-black text-xl uppercase tracking-widest flex items-center justify-center gap-4 hover:scale-[1.02] transition-all">
-                  Book a Consult <MessageSquare className="w-6 h-6" />
-                </button>
-                <button className="w-full py-6 border border-foreground/20 text-foreground rounded-full font-black text-xl uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-foreground/5 transition-all">
-                  Request Whitepaper
-                </button>
+              <div className="pt-8">
+                <a 
+                  href={content.appLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 px-10 py-5 bg-foreground text-background rounded-full font-black uppercase tracking-widest hover:scale-105 transition-all shadow-xl group"
+                >
+                  {content.appType === 'download' ? (
+                    <>Download App <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" /></>
+                  ) : (
+                    <>Launch Platform <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></>
+                  )}
+                </a>
               </div>
-            </div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full group-hover:bg-primary/10 transition-colors" />
-          </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="relative aspect-square lg:aspect-video rounded-[3rem] overflow-hidden border border-foreground/5 shadow-2xl"
+            >
+              <img 
+                src={content.heroImage} 
+                alt={content.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </motion.div>
+          </div>
+
+          {/* Detailed Sections */}
+          <div className="grid md:grid-cols-2 gap-12">
+            {content.sections.map((section, i) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="p-12 rounded-[2.5rem] bg-muted border border-foreground/5 space-y-6 group hover:border-primary/20 transition-colors"
+              >
+                <div className="w-16 h-16 bg-background rounded-2xl flex items-center justify-center border border-foreground/5 text-primary group-hover:scale-110 transition-transform">
+                  <section.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-3xl font-display font-black uppercase tracking-tight">{section.title}</h3>
+                <p className="text-muted-foreground leading-relaxed font-light text-lg">
+                  {section.content}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </main>
+      
       <Footer />
     </div>
   );
