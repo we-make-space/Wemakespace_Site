@@ -77,7 +77,7 @@ export function Nav() {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="lg:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4 z-[100]">
             <ThemeToggle />
             <button
               className="w-12 h-12 flex items-center justify-center text-foreground transition-transform active:scale-90"
