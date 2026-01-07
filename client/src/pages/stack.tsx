@@ -109,7 +109,7 @@ export default function Stack() {
                       <platform.icon className="w-8 h-8 text-primary" />
                     </div>
                     <Link href={`/solutions/${platform.id}`}>
-                      <button className="w-12 h-12 bg-background rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-white cursor-pointer">
+                      <button className="w-12 h-12 bg-background rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-primary hover:text-white cursor-pointer z-20">
                         <ChevronRight className="w-6 h-6" />
                       </button>
                     </Link>
