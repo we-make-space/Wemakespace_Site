@@ -8,6 +8,7 @@ import Solutions from "@/pages/solutions";
 import SolutionDetail from "@/pages/solution-detail";
 import Vision from "@/pages/vision";
 import Insights from "@/pages/cases";
+import ArticleDetail from "@/pages/article-detail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/solutions/:slug" component={SolutionDetail} />
       <Route path="/vision" component={Vision} />
       <Route path="/cases" component={Insights} />
+      <Route path="/insights/:id" component={ArticleDetail} />
       <Route component={NotFound} />
     </Switch>
   );
