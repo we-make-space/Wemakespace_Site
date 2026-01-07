@@ -68,15 +68,6 @@ export function Nav() {
             ))}
             
             <ThemeToggle />
-            
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsContactOpen(true)}
-              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-sm font-black uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,94,54,0.4)] transition-all"
-            >
-              Start Project
-            </motion.button>
           </div>
 
           <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
@@ -124,15 +115,7 @@ export function Nav() {
             </motion.a>
           </Link>
         ))}
-        <button 
-          onClick={() => {
-            setIsOpen(false);
-            setIsContactOpen(true);
-          }}
-          className="mt-8 bg-primary text-primary-foreground px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest hover:scale-105 transition-transform"
-        >
-          Get Started
-        </button>
+        <ThemeToggle />
       </motion.div>
     </nav>
   );
