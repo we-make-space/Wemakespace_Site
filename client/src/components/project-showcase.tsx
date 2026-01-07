@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import hivesImage from "@assets/generated_images/luxurious-modern-digital-real-estate-interface_1.png";
-import fashnectImage from "@assets/generated_images/vibrant-social-commerce-mobile-interface_1.png";
+import hivesImage from "@assets/generated_images/luxurious_modern_digital_real_estate_interface.png";
+import fashnectImage from "@assets/generated_images/vibrant_social_commerce_mobile_interface.png";
 
 const platforms = [
   {
