@@ -37,8 +37,12 @@ export function Footer() {
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500">
           <p>© 2026 Wemakespace. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-neutral-300">Privacy Policy</a>
-            <a href="#" className="hover:text-neutral-300">Terms of Service</a>
+            <Link href="/privacy">
+              <a className="hover:text-neutral-300">Privacy Policy</a>
+            </Link>
+            <Link href="/terms">
+              <a className="hover:text-neutral-300">Terms of Service</a>
+            </Link>
           </div>
         </div>
       </div>
