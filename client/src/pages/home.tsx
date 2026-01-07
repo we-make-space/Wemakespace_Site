@@ -46,7 +46,7 @@ export default function Home() {
               BUILD THE <br/><span className="text-primary italic">FUTURE</span>
             </h2>
             <p className="text-2xl text-muted-foreground mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-              Join the ecosystem of elite engineering. Let's build your digital space together.
+              We specialize in engineering high-performance digital ecosystems. If it's useful, we build it well and connect it to the world.
             </p>
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(255,94,54,0.5)" }}
