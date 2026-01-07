@@ -7,6 +7,7 @@ import Stack from "@/pages/stack";
 import Solutions from "@/pages/solutions";
 import SolutionDetail from "@/pages/solution-detail";
 import Vision from "@/pages/vision";
+import Insights from "@/pages/cases";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/solutions" component={Solutions} />
       <Route path="/solutions/:slug" component={SolutionDetail} />
       <Route path="/vision" component={Vision} />
+      <Route path="/cases" component={Insights} />
       <Route component={NotFound} />
     </Switch>
   );
