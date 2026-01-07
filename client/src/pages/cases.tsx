@@ -121,45 +121,47 @@ export default function Insights() {
 
           {/* Featured Post */}
           <section className="mb-32">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="relative group rounded-[4rem] overflow-hidden border border-foreground/5 aspect-[16/9] md:aspect-[21/9] bg-muted"
-            >
-              <img 
-                src={articles[0].image} 
-                alt={articles[0].title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-              
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                <div className="max-w-3xl space-y-6">
-                  <span className="px-4 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em]">Featured Thought Leadership</span>
-                  <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter uppercase leading-none">
-                    {articles[0].title}
-                  </h2>
-                  <p className="text-lg text-muted-foreground font-light max-w-xl">
-                    {articles[0].excerpt}
-                  </p>
-                  <div className="flex items-center gap-6 pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/20 flex items-center justify-center">
-                        <User className="w-5 h-5 text-primary" />
+            <Link href={`/insights/${articles[0].id}`}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="relative group rounded-[4rem] overflow-hidden border border-foreground/5 aspect-[16/9] md:aspect-[21/9] bg-muted cursor-pointer"
+              >
+                <img 
+                  src={articles[0].image} 
+                  alt={articles[0].title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                
+                <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                  <div className="max-w-3xl space-y-6">
+                    <span className="px-4 py-1 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em]">Featured Thought Leadership</span>
+                    <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter uppercase leading-none">
+                      {articles[0].title}
+                    </h2>
+                    <p className="text-lg text-muted-foreground font-light max-w-xl">
+                      {articles[0].excerpt}
+                    </p>
+                    <div className="flex items-center gap-6 pt-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/20 flex items-center justify-center">
+                          <User className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="font-bold text-sm uppercase tracking-widest">{articles[0].author}</div>
+                          <div className="text-xs text-muted-foreground uppercase tracking-widest">{articles[0].role}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="font-bold text-sm uppercase tracking-widest">{articles[0].author}</div>
-                        <div className="text-xs text-muted-foreground uppercase tracking-widest">{articles[0].role}</div>
+                      <div className="h-8 w-px bg-foreground/10" />
+                      <div className="flex items-center gap-2 text-muted-foreground uppercase tracking-widest text-[10px] font-bold">
+                        <Clock className="w-4 h-4" /> {articles[0].readTime}
                       </div>
-                    </div>
-                    <div className="h-8 w-px bg-foreground/10" />
-                    <div className="flex items-center gap-2 text-muted-foreground uppercase tracking-widest text-[10px] font-bold">
-                      <Clock className="w-4 h-4" /> {articles[0].readTime}
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           </section>
 
           {/* Article Grid */}
@@ -173,35 +175,39 @@ export default function Insights() {
                 transition={{ delay: i * 0.1 }}
                 className="flex flex-col group"
               >
-                <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-foreground/5 mb-8">
-                  <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute top-6 left-6">
-                    <span className="px-4 py-1 rounded-full bg-background/80 backdrop-blur-md border border-foreground/5 text-[10px] font-black uppercase tracking-[0.2em] text-primary">
-                      {article.category.replace('-', ' ')}
-                    </span>
+                <Link href={`/insights/${article.id}`}>
+                  <div className="cursor-pointer">
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-foreground/5 mb-8">
+                      <img 
+                        src={article.image} 
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-6 left-6">
+                        <span className="px-4 py-1 rounded-full bg-background/80 backdrop-blur-md border border-foreground/5 text-[10px] font-black uppercase tracking-[0.2em] text-primary">
+                          {article.category.replace('-', ' ')}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-4 text-muted-foreground uppercase tracking-widest text-[10px] font-bold">
+                        <span>{article.date}</span>
+                        <span className="w-1 h-1 rounded-full bg-primary" />
+                        <span>{article.readTime}</span>
+                      </div>
+                      <h3 className="text-2xl font-display font-black uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                      <p className="text-muted-foreground font-light leading-relaxed line-clamp-2">
+                        {article.excerpt}
+                      </p>
+                      <button className="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs pt-4 group/btn">
+                        Read Article <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-muted-foreground uppercase tracking-widest text-[10px] font-bold">
-                    <span>{article.date}</span>
-                    <span className="w-1 h-1 rounded-full bg-primary" />
-                    <span>{article.readTime}</span>
-                  </div>
-                  <h3 className="text-2xl font-display font-black uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-muted-foreground font-light leading-relaxed line-clamp-2">
-                    {article.excerpt}
-                  </p>
-                  <button className="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs pt-4 group/btn">
-                    Read Article <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
-                  </button>
-                </div>
+                </Link>
               </motion.article>
             ))}
           </div>
