@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { Button } from "@/components/ui/button";
 import { Eye, Target, Rocket, Users, MessageCircle, Twitter, Linkedin, Github, Instagram } from "lucide-react";
-
 import { Footer } from "@/components/footer";
 
 const leaders = [
@@ -171,13 +171,33 @@ export default function Vision() {
             <p className="text-2xl text-muted-foreground font-light leading-relaxed">
               At Wemakespace, we believe that the best digital products are born from a culture of radical transparency, extreme engineering discipline, and a deep respect for the end user's time. We are building the room for you to succeed, one pixel and one line of code at a time.
             </p>
+
             {/* <div className="pt-12">
               <button className="px-12 py-6 bg-foreground text-background rounded-full font-black text-xl uppercase tracking-widest hover:scale-105 hover:bg-primary hover:text-white transition-all">
                 Join our Journey
               </button>
             </div> */}
+
+
           </motion.div>
         </section>
+      {/* <section className="py-32 px-6">
+        <div className="max-w-6xl mx-auto relative rounded-[3rem] overflow-hidden bg-primary p-16 md:p-24 text-center shadow-2xl shadow-primary/30">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.2),transparent)] pointer-events-none" />
+          
+          <div className="relative z-10">
+            <h2 className="text-5xl md:text-8xl font-black font-display mb-8 text-primary-foreground tracking-tighter">
+              Start the <br/>Revolution.
+            </h2>
+            <p className="text-xl md:text-2xl text-primary-foreground/80 max-w-2xl mx-auto mb-12 font-medium">
+              Join the elite circle of enterprises redefining what's possible in the digital age.
+            </p>
+            <Button size="lg" className="h-20 px-12 rounded-full bg-background text-foreground hover:bg-background/90 text-2xl font-black shadow-xl transition-all hover:scale-105 active:scale-95">
+              Contact Us Today
+            </Button>
+          </div>
+        </div>
+      </section> */}
       </main>
       <Footer />
     </div>
