@@ -10,7 +10,7 @@ const teamStats = [
 
 export function StatsSection() {
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
+    <section className="pb-32 bg-background relative overflow-hidden">
       <div className="container px-6 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {teamStats.map((stat, i) => (

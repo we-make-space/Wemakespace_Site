@@ -14,9 +14,14 @@ import { Process } from "@/components/process";
 import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
 import { ContactModal } from "@/components/contact-modal";
+import { EventSection } from "@/components/event-section";
+// import { BentoCard } from "@/components/BentoCard";
+import { useBentoItems } from "@/hooks/use-content";
+import { BentoCard } from "@/components/BentoCard";
 
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const { data: bentoItems = [] } = useBentoItems();
   return (
     <div className="min-h-screen bg-black text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       <SEO title="Home" description="Building the future of spatial computing and digital resonance." />
@@ -24,13 +29,15 @@ export default function Home() {
       <main>
         <Hero />
         <IconicProject />
-        <BentoGrid />
-        <StatsSection />
         <TrustSection />
-        <TechSpecs />
+        <BentoGrid />
+        {/* <StatsSection /> */}
         <ProjectShowcase />
-        <Features />
-        <Process />
+        {/* <TechSpecs /> */}
+        <EventSection />
+        {/* <Features /> */}
+        {/* <BentoCard /> */}
+        {/* <Process /> */}
         <Testimonials />
         
         {/* Final CTA / Connect Section */}

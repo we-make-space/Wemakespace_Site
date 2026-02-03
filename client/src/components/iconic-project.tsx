@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import iconicProject from "@assets/generated_images/futuristic_3d_interface_for_a_high-end_software_project..png";
 import { ArrowRight, Sparkles, Box } from "lucide-react";
+import { Link } from "wouter";
 
 export function IconicProject() {
   return (
@@ -18,7 +19,7 @@ export function IconicProject() {
             <Sparkles className="w-4 h-4" /> Iconic Release 2026
           </span>
           <h2 className="text-6xl md:text-8xl font-display font-black text-foreground leading-none tracking-tighter">
-            Introducing <span className="text-primary italic">AetherOS.</span>
+            Introducing <span className="text-primary italic">Fashnect.</span>
           </h2>
         </motion.div>
 
@@ -28,45 +29,45 @@ export function IconicProject() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-[4rem] overflow-hidden border border-foreground/10 aspect-video md:aspect-[21/9] bg-muted shadow-2xl"
+            className="relative rounded-[4rem] overflow-hidden border border-foreground/10 aspect-video md:aspect-[21/9] bg-muted shadow-2xl bg-orange-400"
           >
             <img 
-              src={iconicProject} 
-              alt="AetherOS Interface" 
-              className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
+              src="/fashnect_image_vendor.png" 
+              alt="Fashnect Interface" 
+              className="w-full h-full object-scale-down opacity-80 group-hover:scale-105 transition-transform duration-1000"
             />
             
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
             
             <div className="absolute bottom-0 left-0 right-0 p-12 md:p-20 flex flex-col md:flex-row justify-between items-end gap-8">
               <div className="max-w-xl text-left">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-4 invisible">
                   <Box className="w-6 h-6 text-primary" />
-                  <span className="text-muted-foreground font-mono text-sm tracking-widest uppercase font-bold">Project Alpha-01</span>
+                  <span className="text-muted-foreground font-mono text-sm tracking-widest uppercase font-bold">Social E-commerce App</span>
                 </div>
-                <h3 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-                  The spatial operating system for deep tech.
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+                  Buy, Sell, Express - fashnect.
                 </h3>
-                <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                  AetherOS redefines human-computer interaction with neural-latency synchronization and decentralized intelligence.
+                <p className="text-xl text-foreground font-light leading-relaxed">
+                  We’re creating a platform that works like your favorite marketplace — but feels like your favorite social app.
                 </p>
               </div>
               
-              <button className="bg-foreground text-background px-12 py-6 rounded-full font-black text-xl uppercase tracking-widest flex items-center gap-4 hover:bg-primary hover:text-white transition-all shadow-2xl">
-                Explore Case Study
+              <a href="https://fashnect.com" target="_blank" className="bg-foreground text-background px-12 py-6 rounded-full font-black text-xl uppercase tracking-widest flex items-center gap-4 hover:bg-primary hover:text-white transition-all shadow-2xl">
+                Learn More
                 <ArrowRight className="w-6 h-6" />
-              </button>
+              </a>
             </div>
           </motion.div>
           
           {/* Decorative floating badges */}
-          <motion.div 
+          {/* <motion.div 
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
             className="absolute -top-10 -right-10 bg-primary p-8 rounded-[2rem] shadow-2xl hidden lg:block"
           >
-            <span className="text-primary-foreground font-black text-2xl tracking-tighter">98% Beta <br/> Efficiency</span>
-          </motion.div>
+            <span className="text-primary-foreground font-black text-2xl tracking-tighter">98% User <br/> Friendly</span>
+          </motion.div> */}
         </div>
       </div>
     </section>

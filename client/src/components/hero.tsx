@@ -44,9 +44,9 @@ export function Hero() {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-12 backdrop-blur-2xl shadow-[0_0_20px_rgba(255,94,54,0.1)]"
             >
-              <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Studio
+              <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Company
             </motion.span>
-            <h1 className="text-7xl md:text-9xl lg:text-[11rem] font-display font-black text-foreground leading-[0.8] tracking-tighter mb-8">
+            <h1 className="text-7xl md:text-8xl lg:text-[9rem] font-display font-black text-foreground leading-[0.8] tracking-tighter mb-8">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -64,7 +64,7 @@ export function Hero() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
                   className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x block"
                 >
-                  digital space.
+                  what's next.
                 </motion.span>
               </span>
             </h1>
@@ -76,15 +76,15 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-xl md:text-3xl text-muted-foreground/80 max-w-3xl mx-auto leading-tight font-light tracking-tight"
           >
-            Engineering seamless digital experiences. We create high-performance 
-            software that makes room for your business to scale.
+            Engineering seamless digital experiences.
+            We build high-performance products for people, platforms, and the future.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
+            className="invisible flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
           >
             <motion.button 
               whileHover={{ scale: 1.05, y: -5 }}

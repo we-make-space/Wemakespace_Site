@@ -8,7 +8,6 @@ interface ContactModalProps {
 }
 
 export function ContactModal({ isOpen, onClose }: ContactModalProps) {
-  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,13 +15,47 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     project: "",
     budget: ""
   });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const services = [
-    { id: "platform", name: "Platform Engineering", icon: Rocket },
-    { id: "spatial", name: "Spatial UI/UX", icon: Sparkles },
-    { id: "ecosystem", name: "Digital Ecosystem", icon: Globe },
-    { id: "consulting", name: "Strategy", icon: MessageSquare }
+    { id: "platform", name: "Applications", icon: Rocket },
+    { id: "spatial", name: "AI-Powered Solutions", icon: Sparkles },
+    { id: "ecosystem", name: "Software Training & Bootcamps", icon: Globe },
+    { id: "consulting", name: "Consultancy & Strategy", icon: MessageSquare }
   ];
+
+  // --- SUBMIT HANDLER ---
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.company || !formData.project) {
+    alert("Please fill all required fields and select a project");
+    return;
+  }
+
+  const to = "wemakespace1@gmail.com"; 
+  const subject = encodeURIComponent(
+    `A New Project for WeMakeSpace — ${formData.project}`
+  );
+
+  const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Project Type: ${formData.project}
+Budget: ${formData.budget || "Not specified"}
+
+Message:
+${formData.company}
+  `);
+
+  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+
+  setSuccess(true);
+  setFormData({ name: "", email: "", company: "", project: "", budget: "" });
+};
+
 
   return (
     <AnimatePresence>
@@ -50,14 +83,14 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </button>
 
             <div className="grid md:grid-cols-2">
-              {/* Left Side: Brand/Info */}
+              {/* Left Side */}
               <div className="p-12 bg-primary/5 flex flex-col justify-between border-r border-white/5">
                 <div>
                   <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-8">
                     <Code className="text-white" />
                   </div>
                   <h2 className="text-5xl font-display font-black tracking-tighter uppercase leading-none mb-6">
-                    Start your <br/><span className="text-primary italic">Resonance.</span>
+                    Talk to <br/><span className="text-primary italic">US.</span>
                   </h2>
                   <p className="text-xl text-muted-foreground font-light leading-relaxed">
                     Tell us about your vision. We'll help you build the digital space your business deserves.
@@ -78,9 +111,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
               {/* Right Side: Form */}
               <div className="p-12 overflow-y-auto max-h-[80vh]">
-                <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-8" onSubmit={handleSubmit}>
+                  {/* Services */}
                   <div className="space-y-4">
-                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">What are we building?</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      What are we building?
+                    </label>
                     <div className="grid grid-cols-2 gap-3">
                       {services.map((service) => (
                         <button
@@ -88,8 +124,8 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           type="button"
                           onClick={() => setFormData({ ...formData, project: service.id })}
                           className={`p-4 rounded-2xl border transition-all text-left flex flex-col gap-2 ${
-                            formData.project === service.id 
-                              ? "bg-primary border-primary text-white" 
+                            formData.project === service.id
+                              ? "bg-primary border-primary text-white"
                               : "bg-white/5 border-white/10 text-muted-foreground hover:border-primary/50"
                           }`}
                         >
@@ -100,37 +136,52 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     </div>
                   </div>
 
+                  {/* Inputs */}
                   <div className="space-y-6">
-                    <div className="relative">
-                      <input 
-                        type="text" 
-                        placeholder="Your Name"
-                        className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors"
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      />
-                    </div>
-                    <div className="relative">
-                      <input 
-                        type="email" 
-                        placeholder="Email Address"
-                        className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors"
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      />
-                    </div>
-                    <div className="relative">
-                      <textarea 
-                        placeholder="Tell us about the project..."
-                        rows={3}
-                        className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors resize-none"
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      />
-                    </div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                    <textarea
+                      placeholder="Tell us about the project..."
+                      rows={3}
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors resize-none"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      required
+                    />
+                    <input
+                      type="text"
+                      placeholder="Budget (optional)"
+                      className="w-full bg-transparent border-b border-white/10 py-4 text-xl focus:border-primary outline-none transition-colors"
+                      value={formData.budget}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                    />
                   </div>
 
-                  <button 
-                    className="w-full py-6 bg-primary text-white rounded-full font-black text-xl uppercase tracking-widest hover:shadow-[0_0_30px_rgba(255,94,54,0.4)] transition-all flex items-center justify-center gap-4"
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={`w-full py-6 rounded-full font-black text-xl uppercase tracking-widest flex items-center justify-center gap-4 transition-all ${
+                      loading
+                        ? "bg-white/20 text-white cursor-not-allowed"
+                        : "bg-primary text-white hover:shadow-[0_0_30px_rgba(255,94,54,0.4)]"
+                    }`}
                   >
-                    Send Signal <Send size={20} />
+                    {loading ? "Sending..." : "Send Signal"} <Send size={20} />
                   </button>
                 </form>
               </div>

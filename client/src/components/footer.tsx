@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ContactModal } from "./contact-modal";
 import { Mail, ArrowRight } from "lucide-react";
 import newsletterImage from "@assets/stock_images/modern_futuristic_te_6e525343.jpg";
+import { WemakeSpaceLogo } from "./wemakespaceLogo";
 
 interface FooterProps {
   showCTA?: boolean;
@@ -66,10 +67,13 @@ export function Footer({ showCTA = false }: FooterProps) {
 
       <div className="container px-6 mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-2">
-            <h2 className="text-3xl font-display font-bold mb-6">
-              Wemakespace<span className="text-primary">.</span>
-            </h2>
+          <div className="md:col-span-2 flex flex-col items-start gap-6">
+            <div className="flex items-center gap-3 mb-6">
+              <WemakeSpaceLogo className={"rounded"} size={33} />
+              <h2 className="text-3xl font-display font-bold">
+                Wemakespace<span className="text-primary">.</span>
+              </h2>
+          </div>
             <p className="text-neutral-400 max-w-sm">
               Making room for you. Creating sustainable, beautiful, and functional spaces for the modern world.
             </p>
@@ -78,25 +82,23 @@ export function Footer({ showCTA = false }: FooterProps) {
           <div>
             <h4 className="font-bold mb-4">Sitemap</h4>
             <ul className="space-y-2 text-neutral-400">
-              <li><Link href="/stack" className="hover:text-primary transition-colors cursor-pointer">Platforms</Link></li>
-              <li><Link href="/solutions" className="hover:text-primary transition-colors cursor-pointer">Solutions</Link></li>
-              <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Case Studies</Link></li>
-              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Vision</Link></li>
+              <li><Link href="/stack" className="hover:text-primary transition-colors cursor-pointer">Our Platforms</Link></li>
+              <li><Link href="/solutions" className="hover:text-primary transition-colors cursor-pointer">Our Services</Link></li>
+              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Our Vision</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold mb-4">Studio</h4>
+            <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-neutral-400">
-              <li><Link href="/vision" className="hover:text-primary transition-colors cursor-pointer">Our Studio</Link></li>
-              <li><Link href="/team" className="hover:text-primary transition-colors cursor-pointer">Team</Link></li>
-              <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Insights</Link></li>
+              <li><Link href="/cases" className="hover:text-primary transition-colors cursor-pointer">Blog</Link></li>
+              <li><Link href="/event" className="hover:text-primary transition-colors cursor-pointer">Event Details</Link></li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500">
-          <p>© 2026 Wemakespace. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Wemakespace LLC. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy">
               <a className="hover:text-neutral-300">Privacy Policy</a>

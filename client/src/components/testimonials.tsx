@@ -1,29 +1,29 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    quote: "Wemakespace completely redefined how we interact with our office. The flow is now natural and inspiring.",
-    author: "Sarah Chen",
-    role: "CEO, Nexa Design",
-    avatar: "SC"
-  },
-  {
-    quote: "Their eye for detail and spatial harmony is unmatched. Truly the best in the industry.",
-    author: "Marcus Thorne",
-    role: "Founder, Thorne Living",
-    avatar: "MT"
-  }
-];
+import { useTestimonials } from "@/hooks/use-content";
 
 export function Testimonials() {
+  const { data: testimonials = [], isLoading } = useTestimonials();
+
+  if (isLoading) {
+    return (
+      <section className="py-24 bg-accent/90">
+        <div className="container px-6 mx-auto">
+          <div className="text-center">
+            <p className="text-muted-foreground">Loading testimonials...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section className="py-24 bg-accent/30">
+    <section className="py-24 bg-accent/90">
       <div className="container px-6 mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
           {testimonials.map((t, i) => (
             <motion.div
-              key={i}
+              key={t.id}
               initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -34,12 +34,22 @@ export function Testimonials() {
                 "{t.quote}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                  {t.avatar}
-                </div>
+                {t.avatar_url ? (
+                  <img
+                    src={t.avatar_url}
+                    alt={t.author}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
+                    {t.avatar_initials || t.author.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()}
+                  </div>
+                )}
                 <div>
                   <h4 className="font-bold text-foreground">{t.author}</h4>
-                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                  {t.role && (
+                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Clock, Globe2, ShieldCheck } from "lucide-react";
+import { Code2, BrainCircuit, GraduationCap, Compass } from "lucide-react";
 
 const features = [
   {
-    title: "Global Compliance",
-    desc: "Adhering to regional data sovereignty and privacy standards worldwide.",
-    icon: Globe2
+    title: "Web & Mobile Applications",
+    desc: "Design and development of scalable, high-performance web and mobile applications tailored to real business needs.",
+    icon: Code2
   },
   {
-    title: "Zero Trust Security",
-    desc: "Rigorous identity verification for every user and device interaction.",
-    icon: ShieldCheck
+    title: "AI-Powered Solutions",
+    desc: "Intelligent applications powered by machine learning and automation to enhance decision-making and user experience.",
+    icon: BrainCircuit
   },
   {
-    title: "Self-Healing Infra",
-    desc: "Automated recovery and scaling without manual intervention.",
-    icon: Clock
+    title: "Software Training & Bootcamps",
+    desc: "Hands-on training programs designed to equip individuals and teams with practical, industry-ready skills.",
+    icon: GraduationCap
   },
   {
-    title: "Quality Guaranteed",
-    desc: "Rigorous automated testing and code quality benchmarks.",
-    icon: CheckCircle2
+    title: "Technology Advisory & Strategy",
+    desc: "Guidance on architecture, product direction, and technology decisions that drive long-term growth.",
+    icon: Compass
   }
 ];
 
@@ -31,16 +31,19 @@ export function TrustSection() {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
             <h2 className="text-5xl md:text-6xl font-display font-black text-white leading-none tracking-tighter mb-8">
-              Reliability <br/>
-              <span className="text-primary italic">Engineered.</span>
+              What We <br />
+              <span className="text-primary">Build & Deliver.</span>
             </h2>
+
             <p className="text-xl text-muted-foreground font-light leading-relaxed mb-12">
-              We build systems that don't just work—they endure. Our focus on 
-              resilience ensures your digital space is always available.
+              WeMakeSpace provides end-to-end technology services focused on
+              building robust digital products, empowering talent, and guiding
+              businesses through modern technological challenges.
             </p>
+
             <div className="space-y-6">
               {features.map((f, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -57,22 +60,30 @@ export function TrustSection() {
               ))}
             </div>
           </div>
+
           <div className="relative aspect-square">
             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full animate-pulse" />
-            <motion.div 
+
+            <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
               className="relative w-full h-full border-2 border-dashed border-white/10 rounded-full flex items-center justify-center"
             >
-               <div className="w-3/4 h-3/4 border-2 border-primary/20 rounded-full animate-reverse-spin" />
+              <div className="w-3/4 h-3/4 border-2 border-primary/20 rounded-full animate-reverse-spin" />
             </motion.div>
+
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-7xl font-display font-black text-white">99.99</div>
-                <div className="text-primary font-bold tracking-[0.3em] uppercase text-sm">Uptime SLA</div>
+                <div className="text-6xl font-display font-black text-white">
+                  Services
+                </div>
+                <div className="text-primary font-bold tracking-[0.3em] uppercase text-sm">
+                  Built To Scale
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

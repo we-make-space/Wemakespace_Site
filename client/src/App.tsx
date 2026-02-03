@@ -8,12 +8,12 @@ import Stack from "@/pages/stack";
 import Solutions from "@/pages/solutions";
 import SolutionDetail from "@/pages/solution-detail";
 import Vision from "@/pages/vision";
-import Team from "@/pages/team";
 import Insights from "@/pages/cases";
 import ArticleDetail from "@/pages/article-detail";
 import PrivacyPolicy from "@/pages/privacy";
 import Terms from "@/pages/terms";
 import NotFound from "@/pages/not-found";
+import EventDetails from "@/pages/event-details";
 
 function Router() {
   return (
@@ -23,9 +23,9 @@ function Router() {
       <Route path="/solutions" component={Solutions} />
       <Route path="/solutions/:slug" component={SolutionDetail} />
       <Route path="/vision" component={Vision} />
-      <Route path="/team" component={Team} />
       <Route path="/cases" component={Insights} />
       <Route path="/insights/:id" component={ArticleDetail} />
+      <Route path="/event" component={EventDetails} />
       <Route path="/privacy" component={PrivacyPolicy} />
       <Route path="/terms" component={Terms} />
       <Route component={NotFound} />

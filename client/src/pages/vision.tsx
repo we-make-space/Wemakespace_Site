@@ -1,45 +1,50 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
-import { Eye, Target, Rocket, Users, MessageCircle, Twitter, Linkedin, Github } from "lucide-react";
+import { Eye, Target, Rocket, Users, MessageCircle, Twitter, Linkedin, Github, Instagram } from "lucide-react";
 
 import { Footer } from "@/components/footer";
 
 const leaders = [
   {
-    name: "Alex Rivera",
-    role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    name: "Theophilus Owusu Adjei",
+    role: "Co-founder & Chief Executive Officer",
+    image: "/lencer.PNG",
     bio: "Visionary leader focused on the intersection of human experience and digital architecture.",
-    message: "We don't just build software; we create the spaces where the future lives."
+    message: "We don't just build software; we create the spaces where the future lives.",
+    social: { instagram: "https://www.instagram.com/theolencer/", linkedin: "https://www.linkedin.com/in/theophilus-owusu-adjei-4a1802250/", github: "https://github.com/TheoLencer1" }
   },
   {
-    name: "Sarah Chen",
-    role: "Chief Technology Officer",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
+    name: "Bubunamawu Kofi Adiko",
+    role: "Co-founder & Chief Technoogy Officer",
+    image: "/bubu.png",
     bio: "Engineering pioneer with a passion for distributed systems and neural-latency synchronization.",
-    message: "Performance is not a feature—it's the foundation of everything we dream."
+    message: "Performance is not a feature—it's the foundation of everything we dream.",
+    social: { instagram: "https://www.instagram.com/bubuadico/", linkedin: "https://www.linkedin.com/in/bubuadiko/", github: "https://github.com/BubuAdico" }
   },
   {
-    name: "Marcus Thorne",
-    role: "Head of Design",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
+    name: "Ephraim Adinyira",
+    role: "Co-founder & Chief Operations Officer",
+    image: "/Ephraim.png",
     bio: "Minimalist designer dedicated to crafting digital interfaces that feel as natural as physical space.",
-    message: "Design is the invisible hand that makes complex technology feel like magic."
+    message: "Design is the invisible hand that makes complex technology feel like magic.",
+    social: { instagram: "https://www.instagram.com/ephardi_young/", linkedin: "#", github: "#" }
   },
   {
-    name: "Elena Vance",
-    role: "Director of Operations",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    name: "Desmond Asamoah",
+    role: "Chief Product Officer",
+    image: "desmond.png",
     bio: "Operational strategist ensuring seamless delivery of complex digital transformations.",
-    message: "Scale is about more than numbers; it's about the quality of the room we build."
+    message: "Scale is about more than numbers; it's about the quality of the room we build.",
+    social: { instagram: "https://www.instagram.com/kwasi_asamoah18/", linkedin: "https://www.linkedin.com/in/desmond-asamoah-15b61a1b7/", github: "https://github.com/waltob123" }
   },
   {
-    name: "Jordan Hayes",
-    role: "Lead Systems Architect",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
+    name: "Eunice Asamoah",
+    role: "Secretary",
+    image: "Eunice.png",
     bio: "Infrastructure expert specializing in zero-latency global delivery and edge computing.",
-    message: "Engineering excellence is the prerequisite for digital freedom."
+    message: "Engineering excellence is the prerequisite for digital freedom.",
+    social: { instagram: "https://www.instagram.com/asanb_1/", linkedin: "https://www.linkedin.com/in/asamoah-eunice-1b917634b/", github: "#" }
   }
 ];
 
@@ -78,7 +83,7 @@ export default function Vision() {
               <Eye className="w-16 h-16 text-primary mb-8 group-hover:scale-110 transition-transform duration-500" />
               <h2 className="text-4xl font-display font-bold mb-6">The Vision</h2>
               <p className="text-xl text-muted-foreground leading-relaxed font-light">
-                To create a world where technology doesn't just serve people, but creates room for them to flourish, innovate, and expand their potential beyond physical boundaries.
+                To drive innovation through software solutions that transform industries and empower individuals.
               </p>
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full" />
             </motion.div>
@@ -92,7 +97,7 @@ export default function Vision() {
               <Target className="w-16 h-16 text-white mb-8 group-hover:scale-110 transition-transform duration-500" />
               <h2 className="text-4xl font-display font-bold mb-6">The Mission</h2>
               <p className="text-xl opacity-90 leading-relaxed font-light">
-                Engineering high-performance, beautiful, and secure software foundations that empower enterprises to scale their digital presence with zero compromise.
+                We develop cutting-edge software and equip people and businesses with the skills and resources they need to thrive in technology, design, and marketing.
               </p>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full" />
             </motion.div>
@@ -130,14 +135,13 @@ export default function Vision() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     
-                    <div className="absolute bottom-6 left-6 right-6 flex justify-center gap-4 translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                      <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
-                        <Linkedin className="w-5 h-5" />
-                      </button>
-                      <button className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors">
-                        <Twitter className="w-5 h-5" />
-                      </button>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <div className="flex gap-4">
+                      <a href={leader.social.instagram} className="text-white hover:text-primary transition-colors"><Instagram size={20} /></a>
+                      <a href={leader.social.linkedin} className="text-white hover:text-primary transition-colors"><Linkedin size={20} /></a>
+                      <a href={leader.social.github} className="text-white hover:text-primary transition-colors"><Github size={20} /></a>
                     </div>
+                  </div>
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-3xl font-display font-bold">{leader.name}</h3>
@@ -162,16 +166,16 @@ export default function Vision() {
               <MessageCircle className="w-16 h-16 text-primary" />
             </div>
             <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
-              A message from the studio to the community.
+              A message from Us to the community.
             </h2>
             <p className="text-2xl text-muted-foreground font-light leading-relaxed">
               At Wemakespace, we believe that the best digital products are born from a culture of radical transparency, extreme engineering discipline, and a deep respect for the end user's time. We are building the room for you to succeed, one pixel and one line of code at a time.
             </p>
-            <div className="pt-12">
+            {/* <div className="pt-12">
               <button className="px-12 py-6 bg-foreground text-background rounded-full font-black text-xl uppercase tracking-widest hover:scale-105 hover:bg-primary hover:text-white transition-all">
                 Join our Journey
               </button>
-            </div>
+            </div> */}
           </motion.div>
         </section>
       </main>

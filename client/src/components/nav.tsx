@@ -4,6 +4,7 @@ import { Menu, X, Terminal } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "./theme-provider";
 import { ContactModal } from "./contact-modal";
+import { WemakeSpaceLogo } from "./wemakespaceLogo";
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +40,8 @@ export function Nav() {
         >
           <Link href="/">
             <a className="group flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                <Terminal className="w-6 h-6 text-primary-foreground" />
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                <WemakeSpaceLogo className={"rounded"} size={33} />
               </div>
               <span className="text-2xl font-display font-black text-foreground tracking-tighter">
                 Wemakespace<span className="text-primary">.</span>
@@ -52,8 +53,8 @@ export function Nav() {
           <div className="hidden lg:flex items-center gap-10">
             {[
               { name: "Platforms", path: "/stack" },
-              { name: "Solutions", path: "/solutions" },
-              { name: "Insights", path: "/cases" },
+              { name: "Services", path: "/solutions" },
+              { name: "Blog", path: "/cases" },
               { name: "Vision", path: "/vision" }
             ].map((item) => (
               <Link key={item.name} href={item.path}>
