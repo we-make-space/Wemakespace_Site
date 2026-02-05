@@ -68,7 +68,7 @@ export default function NotFound() {
         transition={{ delay: 0.6, duration: 1 }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none -z-20"
       >
-        <div className="text-[20rem] md:text-[40rem] font-display font-black tracking-tighter select-none">
+        <div className="text-[6rem] sm:text-[10rem] md:text-[20rem] lg:text-[40rem] font-display font-black tracking-tighter select-none">
           404
         </div>
       </motion.div>

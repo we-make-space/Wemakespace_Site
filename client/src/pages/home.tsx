@@ -64,7 +64,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(255,94,54,0.5)" }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsContactOpen(true)}
-                className="w-full sm:w-auto bg-primary text-white px-16 py-8 rounded-full font-black text-2xl uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(255,94,54,0.3)]"
+                className="w-full sm:w-auto bg-primary text-white px-8 sm:px-16 py-3 sm:py-8 rounded-full font-black text-lg sm:text-2xl uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(255,94,54,0.3)]"
               >
                 Connect Now
               </motion.button>
@@ -73,7 +73,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, background: "rgba(255,255,255,0.1)" }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsContactOpen(true)}
-                className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-16 py-8 rounded-full font-black text-2xl uppercase tracking-[0.2em] backdrop-blur-xl"
+                className="w-full sm:w-auto bg-white/5 border border-white/10 text-white px-8 sm:px-16 py-3 sm:py-8 rounded-full font-black text-lg sm:text-2xl uppercase tracking-[0.2em] backdrop-blur-xl"
               >
                 Start Project
               </motion.button>

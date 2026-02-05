@@ -82,14 +82,14 @@ ${formData.company}
               <X size={32} />
             </button>
 
-            <div className="grid md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Side */}
-              <div className="p-12 bg-primary/5 flex flex-col justify-between border-r border-white/5">
+              <div className="p-6 md:p-12 bg-primary/5 flex flex-col justify-between md:border-r md:border-white/5 border-transparent">
                 <div>
                   <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-8">
                     <Code className="text-white" />
                   </div>
-                  <h2 className="text-5xl font-display font-black tracking-tighter uppercase leading-none mb-6">
+                  <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter uppercase leading-none mb-6">
                     Talk to <br/><span className="text-primary italic">US.</span>
                   </h2>
                   <p className="text-xl text-muted-foreground font-light leading-relaxed">
@@ -110,7 +110,7 @@ ${formData.company}
               </div>
 
               {/* Right Side: Form */}
-              <div className="p-12 overflow-y-auto max-h-[80vh]">
+              <div className="p-6 md:p-12 overflow-y-auto max-h-[80vh]">
                 <form className="space-y-8" onSubmit={handleSubmit}>
                   {/* Services */}
                   <div className="space-y-4">
@@ -175,7 +175,7 @@ ${formData.company}
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`w-full py-6 rounded-full font-black text-xl uppercase tracking-widest flex items-center justify-center gap-4 transition-all ${
+                    className={`w-full py-4 md:py-6 rounded-full font-black text-lg md:text-xl uppercase tracking-widest flex items-center justify-center gap-4 transition-all ${
                       loading
                         ? "bg-white/20 text-white cursor-not-allowed"
                         : "bg-primary text-white hover:shadow-[0_0_30px_rgba(255,94,54,0.4)]"

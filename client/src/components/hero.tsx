@@ -21,9 +21,9 @@ export function Hero() {
       {/* Parallax Background */}
       <motion.div style={{ opacity, scale }} className="absolute inset-0 z-0">
         <img
-          src={softwareHero}
+          src={"Bg.png"}
           alt="Digital Engineering"
-          className="w-full h-full object-cover opacity-40 scale-110 blur-[1px]"
+          className="w-full h-full object-cover opacity-90 scale-110 object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background" />
       </motion.div>
@@ -46,7 +46,7 @@ export function Hero() {
             >
               <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Company
             </motion.span>
-            <h1 className="text-7xl md:text-8xl lg:text-[9rem] font-display font-black text-foreground leading-[0.8] tracking-tighter mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[9rem] font-display font-black text-foreground leading-[0.8] tracking-tighter mb-8">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -74,23 +74,23 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-xl md:text-3xl text-muted-foreground/80 max-w-3xl mx-auto leading-tight font-light tracking-tight"
+            className="text-lg md:text-3xl text-muted-foreground/80 max-w-3xl mx-auto leading-tight font-light tracking-tight"
           >
             Engineering seamless digital experiences.
             We build high-performance products for people, platforms, and the future.
           </motion.p>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="invisible flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-8"
           >
             <motion.button 
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsContactOpen(true)}
-              className="w-full sm:w-auto px-12 py-6 bg-primary text-primary-foreground rounded-full font-black text-xl hover:shadow-[0_0_50px_-10px_rgba(255,94,54,0.6)] transition-all flex items-center justify-center gap-4 group relative overflow-hidden"
+              className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-6 bg-primary text-primary-foreground rounded-full font-black text-lg sm:text-xl hover:shadow-[0_0_50px_-10px_rgba(255,94,54,0.6)] transition-all flex items-center justify-center gap-4 group relative overflow-hidden"
             >
               <span className="relative z-10">Start Building</span>
               <Code className="w-6 h-6 group-hover:rotate-[360deg] transition-transform duration-700 relative z-10" />
@@ -102,12 +102,12 @@ export function Hero() {
             <motion.button 
               whileHover={{ scale: 1.05, background: "rgba(var(--foreground),0.1)" }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-12 py-6 bg-foreground/5 border border-foreground/10 text-foreground rounded-full font-black text-xl transition-all backdrop-blur-3xl flex items-center justify-center gap-4 group"
+              className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-6 bg-foreground/5 border border-foreground/10 text-foreground rounded-full font-black text-lg sm:text-xl transition-all backdrop-blur-3xl flex items-center justify-center gap-4 group"
             >
               View Stack
               <Cpu className="w-6 h-6 group-hover:scale-125 transition-transform" />
             </motion.button>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
 

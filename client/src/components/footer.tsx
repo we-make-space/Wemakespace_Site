@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useState } from "react";
 import { ContactModal } from "./contact-modal";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight, Instagram, Linkedin, Twitter } from "lucide-react";
 import newsletterImage from "@assets/stock_images/modern_futuristic_te_6e525343.jpg";
 import { WemakeSpaceLogo } from "./wemakespaceLogo";
 
@@ -34,11 +34,11 @@ export function Footer({ showCTA = false }: FooterProps) {
                 Stay in the <br/><span className="text-primary italic">Resonance.</span>
               </h2>
               <p className="text-lg md:text-xl font-light text-muted-foreground leading-tight max-w-xl">
-                Get the latest insights on spatial UI, high-performance ecosystems, and digital architecture delivered to your inbox.
+                Get the latest insights, product updates, and industry trends delivered to your inbox.
               </p>
             </div>
 
-            <div className="relative z-10 w-full md:w-auto min-w-[320px]">
+            <div className="relative z-10 w-full md:w-auto md:min-w-[320px]">
               <div className="flex flex-col gap-4">
                 <div className="relative">
                   <input 
@@ -53,7 +53,7 @@ export function Footer({ showCTA = false }: FooterProps) {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-primary text-white py-4 rounded-full font-black uppercase tracking-widest hover:shadow-xl transition-all flex items-center justify-center gap-3"
+                  className="w-full md:w-auto bg-primary text-white py-3 md:py-4 rounded-full font-black uppercase tracking-widest hover:shadow-xl transition-all flex items-center justify-center gap-3"
                 >
                   Subscribe <ArrowRight size={18} />
                 </motion.button>
@@ -75,8 +75,41 @@ export function Footer({ showCTA = false }: FooterProps) {
               </h2>
           </div>
             <p className="text-neutral-400 max-w-sm">
-              Making room for you. Creating sustainable, beautiful, and functional spaces for the modern world.
+              Making room for you. Creating sustainable, beautiful, and functional applications for the modern world.
             </p>
+            <div className="flex items-center gap-3 mt-4">
+              <span className="text-neutral-500 text-sm mr-2">Follow us</span>
+              <a
+                href="https://www.instagram.com/wemakespace1/"
+                title="Instagram"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-white/5 transition-colors text-neutral-400 hover:text-primary"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href="https://x.com/wemakespace1?s=21"
+                title="Twitter"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-white/5 transition-colors text-neutral-400 hover:text-primary"
+              >
+                <Twitter size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/wemakespace/"
+                title="LinkedIn"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-white/5 transition-colors text-neutral-400 hover:text-primary"
+              >
+                <Linkedin size={18} />
+              </a>
+            </div>
           </div>
           
           <div>
@@ -98,7 +131,7 @@ export function Footer({ showCTA = false }: FooterProps) {
         </div>
         
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500">
-          <p>© {new Date().getFullYear()} Wemakespace LLC. All rights reserved.</p>
+          <p>Copyright © {new Date().getFullYear()} Wemakespace LLC. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy">
               <a className="hover:text-neutral-300">Privacy Policy</a>

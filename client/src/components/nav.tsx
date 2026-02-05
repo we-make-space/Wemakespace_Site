@@ -96,7 +96,7 @@ export function Nav() {
       <motion.div
         initial={false}
         animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
-        className="fixed inset-0 bg-background/98 backdrop-blur-3xl z-[90] lg:hidden flex flex-col items-center justify-center gap-12"
+        className="fixed inset-0 bg-background/98 backdrop-blur-3xl z-[90] lg:hidden flex flex-col items-center justify-center gap-6"
       >
         {[
           { name: "Platforms", path: "/stack" },
@@ -109,7 +109,7 @@ export function Nav() {
               initial={ { opacity: 0, y: 20 } }
               animate={isOpen ? { opacity: 1, y: 0 } : {}}
               transition={ { delay: i * 0.1 } }
-              className="text-5xl font-display font-black text-foreground hover:text-primary transition-colors cursor-pointer"
+              className="text-3xl sm:text-5xl font-display font-black text-foreground hover:text-primary transition-colors cursor-pointer"
               onClick={() => setIsOpen(false)}
             >
               {item.name}

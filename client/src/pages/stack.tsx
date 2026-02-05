@@ -180,7 +180,7 @@ export default function Stack() {
             <h2 className="text-5xl md:text-7xl font-display font-black tracking-tighter uppercase">Ready to enter the space?</h2>
             <p className="text-xl text-muted-foreground font-light">Join the elite brands building on Wemakespace.</p>
             <div className="pt-8">
-              <button className="px-16 py-8 bg-primary text-primary-foreground rounded-full font-black text-2xl uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_50px_rgba(var(--primary),0.3)]">
+              <button className="w-full sm:w-auto px-8 sm:px-16 py-3 sm:py-8 bg-primary text-primary-foreground rounded-full font-black text-lg sm:text-2xl uppercase tracking-widest hover:scale-105 transition-all shadow-[0_0_50px_rgba(var(--primary),0.3)]">
                 Get Started
               </button>
             </div>
