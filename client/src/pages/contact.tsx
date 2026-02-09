@@ -17,13 +17,13 @@ import { Link } from "wouter";
 const COMPANY = {
   name: "Wemakespace LLC",
   tagline: "Making room for you.",
-  established: "2024",
-  email: "hello@wemakespace.com",
-  emailInquiries: "contact@wemakespace.com",
-  phone: "+1 (XXX) XXX-XXXX",
-  phoneAlt: "+233 XX XXX XXXX",
-  address: "Accra, Ghana",
-  addressLine2: "Remote-first · Worldwide",
+  established: "14/02/2025",
+  email: "wemakespace1@gmail.com",
+  emailInquiries: "wemakespace1@gmail.com",
+  phone: "+233 54 206 8078",
+  phoneAlt: "+233 54 412 1741",
+  address: "Sunyani, Ghana",
+  addressLine2: "Adjacent Twene Amanfo · Sunyani",
   officeImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop&q=80",
 };
 

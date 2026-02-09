@@ -23,7 +23,7 @@ export function Hero() {
         <img
           src={"Bg.png"}
           alt="Digital Engineering"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-90 scale-110"
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-90 scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background" />
       </motion.div>
