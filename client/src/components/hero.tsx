@@ -25,7 +25,7 @@ export function Hero() {
           alt="Digital Engineering"
           className="absolute inset-0 w-full h-full object-cover object-top opacity-90 scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/20 to-background" />
       </motion.div>
 
       <div className="container relative z-10 px-4 sm:px-6 mx-auto max-w-[100vw]">
