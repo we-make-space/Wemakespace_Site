@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import {
@@ -45,7 +46,8 @@ export default function Insights() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Updates & Releases"
-        description="Product updates, releases, and stories from the WeMakeSpace team."
+        description="Tech updates, product releases, and engineering insights from Wemakespace."
+        image={getOgImageUrl("cases")}
       />
 
       <Nav />

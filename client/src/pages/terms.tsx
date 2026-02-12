@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import { Scale, FileText, Gavel, AlertCircle } from "lucide-react";
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO title="Terms of Service" description="The rules of engagement for Wemakespace platforms." />
+      <SEO title="Terms of Service" description="Terms of service for Wemakespace software, platforms, and digital products." image={getOgImageUrl("terms")} />
       <Nav />
       <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">
         <div className="container px-4 sm:px-6 mx-auto max-w-4xl w-full box-border">

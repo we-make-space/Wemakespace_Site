@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code2, BrainCircuit, GraduationCap, Compass, Layers, Zap, Shield, BarChart } from "lucide-react";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
@@ -63,7 +64,7 @@ export default function Solutions() {
   return (
     <>
           {/* Services Grid Section */}
-          <SEO title="Solutions" description="We solve complex engineering challenges for forward-thinking companies." />
+          <SEO title="Solutions" description="We solve complex engineering challenges for forward-thinking companies." image={getOgImageUrl("solutions")} />
           <Nav />
 
           <section id="services" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-card/30 relative">

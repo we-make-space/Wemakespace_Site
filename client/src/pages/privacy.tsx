@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import { Shield, Lock, Eye, FileText } from "lucide-react";
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO title="Privacy Policy" description="How we handle and protect your data at Wemakespace." />
+      <SEO title="Privacy Policy" description="Data security, encryption, and privacy practices for Wemakespace software and digital platforms." image={getOgImageUrl("privacy")} />
       <Nav />
       <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">
         <div className="container px-4 sm:px-6 mx-auto max-w-4xl w-full box-border">

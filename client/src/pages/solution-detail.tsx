@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { useParams, Link } from "wouter";
 import { 
   ArrowLeft, 
@@ -40,6 +42,15 @@ export default function SolutionDetail() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={platform.name}
+        description={platform.description || platform.tagline || undefined}
+        image={
+          platform.hero_image_url || platform.image_url
+            ? getOgImageUrl(undefined, platform.hero_image_url || platform.image_url || undefined)
+            : getOgImageUrl("solution-detail")
+        }
+      />
       <Nav />
       
       <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">

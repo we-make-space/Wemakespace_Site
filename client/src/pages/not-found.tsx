@@ -3,10 +3,13 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 import { WemakeSpaceLogo } from "@/components/wemakespaceLogo";
+import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background p-4 sm:p-6 overflow-hidden relative">
+      <SEO title="Page Not Found" description="404 - Page not found. Return to Wemakespace tech and software platform." image={getOgImageUrl("not-found")} />
       {/* Background Decorative Elements - smaller on mobile to avoid overflow */}
       <div className="absolute top-1/4 left-1/4 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[500px] md:h-[500px] bg-primary/10 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] -z-10 animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] md:w-[400px] md:h-[400px] bg-secondary/10 rounded-full blur-[60px] sm:blur-[80px] md:blur-[100px] -z-10" />

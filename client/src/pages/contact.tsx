@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import {
   MapPin,
@@ -24,7 +25,7 @@ const COMPANY = {
   phoneAlt: "+233 54 412 1741",
   address: "Sunyani, Ghana",
   addressLine2: "Adjacent Twene Amanfo · Sunyani",
-  officeImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop&q=80",
+  officeImage: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 const CARD_IMAGES = {
@@ -54,7 +55,8 @@ export default function Contact() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Contact Us"
-        description="Get in touch with Wemakespace. Company info, location, and contact details."
+        description="Contact Wemakespace for web, mobile, AI, and Web3 development. Talk to our engineering team."
+        image={getOgImageUrl("contact")}
       />
       <Nav />
 
@@ -251,7 +253,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Accra+Ghana"
+                  href="https://www.google.com/maps/search/?api=1&query=Sunyani+Ghana"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 min-h-[48px] px-5 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-colors"

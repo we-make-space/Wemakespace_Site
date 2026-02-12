@@ -38,7 +38,7 @@ const team = [
 export default function Team() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
-      <SEO title="Our Team" description="Meet the architects and engineers behind Wemakespace." />
+      <SEO title="Our Team" description="The engineering and product team building Wemakespace software, platforms, and digital solutions." />
       <Nav />
       
       <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">

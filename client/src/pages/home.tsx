@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Hero } from "@/components/hero";
 import { BentoGrid } from "@/components/bento-grid";
 import { TechSpecs } from "@/components/tech-specs";
@@ -24,7 +25,7 @@ export default function Home() {
   const { data: bentoItems = [] } = useBentoItems();
   return (
     <div className="min-h-screen bg-black text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-      <SEO title="Home" description="Building the future of spatial computing and digital resonance." />
+      <SEO title="Home" description="Building the future of spatial computing and digital resonance." image={getOgImageUrl("home")} />
       <Nav />
       <main>
         <Hero />

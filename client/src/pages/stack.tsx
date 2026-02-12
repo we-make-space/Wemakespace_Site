@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import { 
@@ -19,7 +20,7 @@ export default function Stack() {
   const { data: platforms = [], isLoading } = usePlatforms();
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 selection:text-primary">
-      <SEO title="Platforms" description="Explore the Wemakespace ecosystem of high-performance digital platforms." />
+      <SEO title="Platforms" description="Explore the Wemakespace ecosystem of high-performance digital platforms." image={getOgImageUrl("platforms")} />
       <Nav />
       
       <main className="pt-24 sm:pt-28 md:pt-32">

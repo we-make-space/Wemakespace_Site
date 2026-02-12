@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Button } from "@/components/ui/button";
 import { Eye, Target, Rocket, Users, MessageCircle, Twitter, Linkedin, Github, Instagram } from "lucide-react";
 import { Footer } from "@/components/footer";
@@ -51,7 +52,7 @@ const leaders = [
 export default function Vision() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO title="Vision" description="Defining the architectural standards of the next digital era." />
+      <SEO title="Vision" description="Defining the architectural standards of the next digital era." image={getOgImageUrl("vision")} />
       <Nav />
       <main className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20">
         {/* Hero Section */}

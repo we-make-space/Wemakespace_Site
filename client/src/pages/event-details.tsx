@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, MapPin, Sparkles } from "lucide-react";
+import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 
 const EVENT = {
   title: "Getting started: As a Software Engineer 1.0",
@@ -22,6 +24,11 @@ const EVENT = {
 export default function EventDetails() {
   return (
     <div className="min-h-screen bg-background text-foreground" data-testid="page-event-details">
+      <SEO
+        title={EVENT.title}
+        description={EVENT.description}
+        image={getOgImageUrl("event")}
+      />
       <header className="relative overflow-hidden" data-testid="header-event-details">
         <div
           className="absolute inset-0 -z-10 opacity-70"

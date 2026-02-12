@@ -3,51 +3,61 @@ import { useEffect } from "react";
 interface SEOProps {
   title?: string;
   description?: string;
+  /** Absolute URL for OG image (e.g. from getOgImageUrl). Social platforms require full URLs. */
   image?: string;
   type?: string;
 }
 
-export function SEO({ 
-  title, 
-  description = "Wemakespace is an extraordinary digital studio specializing in spatial UI and high-performance software ecosystems.", 
-  image = "/og-image.png", 
-  type = "website" 
+function setMetaTag(
+  propertyOrName: "property" | "name",
+  key: string,
+  value: string
+) {
+  const selector =
+    propertyOrName === "property"
+      ? `meta[property="${key}"]`
+      : `meta[name="${key}"]`;
+  let el = document.querySelector(selector);
+  if (el) {
+    el.setAttribute("content", value);
+  } else {
+    el = document.createElement("meta");
+    el.setAttribute(propertyOrName, key);
+    el.setAttribute("content", value);
+    document.head.appendChild(el);
+  }
+}
+
+export function SEO({
+  title,
+  description = "Wemakespace is an extraordinary digital studio specializing in spatial UI and high-performance software ecosystems.",
+  image,
+  type = "website",
 }: SEOProps) {
   useEffect(() => {
     const siteName = "Wemakespace";
     const fullTitle = title ? `${title} | ${siteName}` : siteName;
 
-    // Update basic tags
     document.title = fullTitle;
-    
-    const updateTag = (selector: string, attr: string, value: string) => {
-      let element = document.querySelector(selector);
-      if (element) {
-        element.setAttribute(attr, value);
-      } else {
-        // pro-actively handle missing tags if needed
-        const head = document.getElementsByTagName('head')[0];
-        const newTag = document.createElement('meta');
-        if (selector.includes('property')) {
-          newTag.setAttribute('property', selector.split('"')[1]);
-        } else {
-          newTag.setAttribute('name', selector.split('"')[1]);
-        }
-        newTag.setAttribute(attr, value);
-        head.appendChild(newTag);
-      }
-    };
 
-    updateTag('meta[property="og:title"]', 'content', fullTitle);
-    updateTag('meta[name="twitter:title"]', 'content', fullTitle);
-    updateTag('meta[property="og:description"]', 'content', description);
-    updateTag('meta[name="twitter:description"]', 'content', description);
-    updateTag('meta[property="og:type"]', 'content', type);
-    
-    // We keep images as placeholders or generated ones if provided
+    setMetaTag("property", "og:title", fullTitle);
+    setMetaTag("name", "twitter:title", fullTitle);
+    setMetaTag("property", "og:description", description);
+    setMetaTag("name", "twitter:description", description);
+    setMetaTag("property", "og:type", type);
+
+    // og:url — canonical URL for this page (needed for correct preview per URL)
+    const canonicalUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}${window.location.pathname}`
+        : "";
+    if (canonicalUrl) {
+      setMetaTag("property", "og:url", canonicalUrl);
+    }
+
     if (image) {
-      updateTag('meta[property="og:image"]', 'content', image);
-      updateTag('meta[name="twitter:image"]', 'content', image);
+      setMetaTag("property", "og:image", image);
+      setMetaTag("name", "twitter:image", image);
     }
   }, [title, description, image, type]);
 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { SEO } from "@/components/seo";
+import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import { useParams, Link } from "wouter";
 import { 
@@ -41,7 +42,15 @@ export default function ArticleDetail() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SEO title={article.title} description={article.title} />
+      <SEO
+        title={article.title}
+        description={article.excerpt || article.title}
+        image={
+          article.image_url
+            ? getOgImageUrl(undefined, article.image_url)
+            : getOgImageUrl("article-detail")
+        }
+      />
       <Nav />
       
       <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">
