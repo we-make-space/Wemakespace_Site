@@ -5,6 +5,7 @@ import { ContactModal } from "./contact-modal";
 import { Mail, ArrowRight, Instagram, Linkedin, Twitter } from "lucide-react";
 import newsletterImage from "@assets/stock_images/modern_futuristic_te_6e525343.jpg";
 import { WemakeSpaceLogo } from "./wemakespaceLogo";
+// import { VERSION } from "@/lib/version";
 
 interface FooterProps {
   showCTA?: boolean;
@@ -132,7 +133,7 @@ export function Footer({ showCTA = false }: FooterProps) {
         </div>
         
         <div className="pt-6 sm:pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-neutral-500 text-center md:text-left">
-          <p>Copyright © {new Date().getFullYear()} Wemakespace LLC. All rights reserved.</p>
+          <p>Copyright © {new Date().getFullYear()} Wemakespace LLC. All rights reserved. {/* <span className="text-neutral-600" title="Site version">v{VERSION}</span> */}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link href="/privacy">
               <a className="hover:text-neutral-300">Privacy Policy</a>

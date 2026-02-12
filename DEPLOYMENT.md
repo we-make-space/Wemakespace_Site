@@ -140,6 +140,16 @@ If you need the full Express server (e.g. for future API routes):
 
 ---
 
+## Versioning
+
+The site version is managed in `package.json` and shown in the footer. To release a new version:
+
+1. **Bump version** in `package.json` (e.g. `1.0.0` → `1.1.0`)
+2. **Tag the release** (optional): `git tag v1.0.0 && git push origin v1.0.0`
+3. **Rebuild and deploy** — the new version will appear in the footer
+
+---
+
 ## Checklist Before Going Live
 
 - [ ] Supabase project is set up and content is in the database
