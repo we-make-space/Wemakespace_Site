@@ -40,14 +40,16 @@ Vercel is free, fast, and ideal for React apps.
    - **Output Directory:** `dist/public`
    - **Install Command:** `npm install`
 
-5. **Environment Variables** (click "Environment Variables" and add):
+5. **Enable Analytics** (recommended): In your project on Vercel → **Analytics** tab → enable **Web Analytics** and **Speed Insights**. Data appears after deployment once visitors arrive.
+
+6. **Environment Variables** (click "Environment Variables" and add):
    | Name | Value |
    |------|-------|
    | `VITE_SUPABASE_URL` | Your Supabase project URL |
    | `VITE_SUPABASE_ANON_KEY` | Your Supabase anon key |
    | `VITE_SITE_URL` | `https://your-vercel-domain.vercel.app` (or your custom domain) |
 
-6. Click **Deploy**.
+7. Click **Deploy**.
 
 ### Step 3: Custom Domain (Optional)
 
@@ -137,6 +139,16 @@ If you need the full Express server (e.g. for future API routes):
 - **Hostinger:** Use for domain and email.
   - Point your domain to Vercel (CNAME or A record).
   - Use Hostinger for email (e.g. `wemakespace1@gmail.com` → custom domain email).
+
+---
+
+## Sitemap & SEO
+
+`sitemap.xml` and `robots.txt` are generated at build time via `vite-plugin-sitemap`. They include:
+- All static pages (/, /stack, /solutions, /vision, /cases, /event, /privacy, /terms, /contact)
+- Dynamic routes from Supabase: `/solutions/:slug`, `/insights/:id` (when env vars are set)
+
+Ensure `VITE_SITE_URL`, `VITE_SUPABASE_URL`, and `VITE_SUPABASE_ANON_KEY` are set at build time for full sitemap coverage.
 
 ---
 
