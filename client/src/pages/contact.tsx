@@ -20,7 +20,7 @@ const COMPANY = {
   tagline: "Making room for you.",
   established: "14/02/2025",
   email: "wemakespace1@gmail.com",
-  emailInquiries: "wemakespace1@gmail.com",
+  emailInquiries: "contact@wemakespace.org",
   phone: "+233 54 206 8078",
   phoneAlt: "+233 54 412 1741",
   address: "Sunyani, Ghana",
