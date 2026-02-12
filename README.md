@@ -99,6 +99,12 @@ npm start
 
 ---
 
+## Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for steps to deploy on **Vercel** or **Hostinger**.
+
+---
+
 ## Project Structure
 
 ```
