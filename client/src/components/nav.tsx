@@ -84,8 +84,8 @@ export function Nav() {
 
           <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
-          {/* Mobile Toggle - stays visible above overlay when menu is open */}
-          <div className={`lg:hidden flex items-center gap-2 ${isOpen ? "relative z-[110]" : "z-[100]"}`}>
+          {/* Mobile Toggle - single hamburger/X in same spot to avoid duplicate close button */}
+          <div className="lg:hidden flex items-center gap-2 z-[100]">
             <ThemeToggle />
             <button
               className="min-w-[44px] min-h-[44px] flex items-center justify-center text-foreground transition-transform active:scale-90 rounded-full"
@@ -104,7 +104,7 @@ export function Nav() {
         style={ { scaleX } }
       />
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - close via nav bar X only (no duplicate close button) */}
       <motion.div
         initial={false}
         animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}

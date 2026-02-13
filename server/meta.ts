@@ -20,7 +20,7 @@ const PAGE_META: Array<{
   { path: "/stack", title: "Platforms", description: "Explore the Wemakespace ecosystem of high-performance digital platforms.", image: `${SITE_URL}/og-images/og-platforms.png` },
   { path: "/solutions", title: "Solutions", description: "We solve complex engineering challenges for forward-thinking companies.", image: `${SITE_URL}/og-images/og-solutions.png` },
   { path: /^\/solutions\/[^/]+$/, title: "Solutions", description: "We solve complex engineering challenges for forward-thinking companies.", image: `${SITE_URL}/og-images/og-solutions.png` },
-  { path: "/vision", title: "Vision", description: "Defining the architectural standards of the next digital era.", image: `${SITE_URL}/og-images/og-vision.png` },
+  { path: "/vision", title: "Vision", description: "Defining the architectural standards of the next digital era.", image: `${SITE_URL}/og-images/og-vision.jpeg` },
   { path: "/cases", title: "Blog", description: "Insights, case studies, and updates from Wemakespace.", image: `${SITE_URL}/og-images/og-cases.png` },
   { path: /^\/insights\/[^/]+$/, title: "Blog", description: "Insights, case studies, and updates from Wemakespace.", image: `${SITE_URL}/og-images/og-cases.png` },
   { path: "/privacy", title: "Privacy Policy", description: "Data security, encryption, and privacy practices for Wemakespace software and digital platforms.", image: `${SITE_URL}/og-images/og-privacy.png` },
@@ -51,7 +51,9 @@ export function injectMetaTags(html: string, pathname: string): string {
   const fullTitle = `${title} | Wemakespace`;
   const canonicalUrl = `${SITE_URL}${cleanPath === "/" ? "" : cleanPath}`;
 
+  const faviconUrl = `${SITE_URL}/favicon.png`;
   const replacements: Array<[RegExp, string]> = [
+    [/href="\/favicon\.png"/g, `href="${escapeHtml(faviconUrl)}"`],
     [/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${escapeHtml(fullTitle)}" />`],
     [/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:title" content="${escapeHtml(fullTitle)}" />`],
     [/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${escapeHtml(description)}" />`],

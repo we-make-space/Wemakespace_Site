@@ -14,8 +14,8 @@ export function IconicProject() {
             viewport={{ once: true, margin: "-50px" }}
             className="flex flex-col items-center text-center mb-6 min-[375px]:mb-8 sm:mb-12 md:mb-16 lg:mb-20 w-full"
           >
-            <span className="px-3 sm:px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-widest mb-3 sm:mb-4 md:mb-6 backdrop-blur-md flex items-center gap-1.5 sm:gap-2">
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> Iconic Release 2026
+            <span className="hidden sm:inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4 md:mb-6 backdrop-blur-md">
+              <Sparkles className="w-4 h-4 shrink-0" /> Iconic Release 2026
             </span>
             <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black text-foreground leading-[0.95] sm:leading-none tracking-tighter max-w-[90vw] sm:max-w-none">
               Introducing <span className="text-primary italic">Fashnect.</span>

@@ -9,7 +9,7 @@ export function ProjectShowcase() {
       <div className="container px-3 min-[375px]:px-4 sm:px-6 mx-auto max-w-[100vw]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 min-[375px]:mb-12 sm:mb-16 md:mb-24 gap-3 min-[375px]:gap-4 sm:gap-6 md:gap-8">
           <div className="max-w-2xl">
-            <span className="text-primary font-bold uppercase tracking-widest text-[10px] min-[375px]:text-xs sm:text-sm mb-1.5 min-[375px]:mb-2 sm:mb-4 block">Our products</span>
+            <span className="hidden sm:block text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-4">Our products</span>
             <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9]">
               Flagship <br/><span className="text-primary italic">Platforms.</span>
             </h2>
@@ -69,9 +69,9 @@ export function ProjectShowcase() {
                       )}
                     </div>
                     {platform.features && platform.features.length > 0 && (
-                      <div className="flex gap-3 flex-wrap" onClick={(e) => e.stopPropagation()}>
+                      <div className="hidden sm:flex gap-3 flex-wrap" onClick={(e) => e.stopPropagation()}>
                         {platform.features.slice(0, 2).map((tag: string) => (
-                          <span key={tag} className="text-[10px] uppercase tracking-widest font-black border border-primary/20 bg-primary/5 text-primary px-4 py-1.5 rounded-full">
+                          <span key={tag} className="text-xs uppercase tracking-widest font-black border border-primary/20 bg-primary/5 text-primary px-4 py-1.5 rounded-full">
                             {tag}
                           </span>
                         ))}
