@@ -32,7 +32,7 @@ export function Footer({ showCTA = false }: FooterProps) {
             
             <div className="relative z-10 flex-1 w-full text-center md:text-left">
               <h2 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black tracking-tighter uppercase leading-tight mb-2 min-[375px]:mb-3 sm:mb-6">
-                Stay in the <br/><span className="text-primary italic">Resonance.</span>
+                Stay in the <br/><span className="text-primary italic">loop.</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-muted-foreground leading-snug max-w-xl">
                 Get the latest insights, product updates, and industry trends delivered to your inbox.

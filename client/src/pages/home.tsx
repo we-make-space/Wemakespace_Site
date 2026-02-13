@@ -25,7 +25,7 @@ export default function Home() {
   const { data: bentoItems = [] } = useBentoItems();
   return (
     <div className="min-h-screen bg-black text-foreground font-sans selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-      <SEO title="Home" description="Building the future of spatial computing and digital resonance." image={getOgImageUrl("home")} />
+      <SEO title="Home" description="Building high-performance software for web, mobile, AI, and Web3. We engineer digital products and platforms." image={getOgImageUrl("home")} />
       <Nav />
       <main>
         <Hero />

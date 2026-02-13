@@ -15,7 +15,7 @@ const PAGE_META: Array<{
   description: string;
   image: string;
 }> = [
-  { path: "/", title: "Home", description: "Building the future of spatial computing and digital resonance.", image: `${SITE_URL}/og-images/og-home.png` },
+  { path: "/", title: "Home", description: "Building high-performance software for web, mobile, AI, and Web3. We engineer digital products and platforms.", image: `${SITE_URL}/og-images/og-home.png` },
   { path: "/contact", title: "Contact", description: "Get in touch with Wemakespace. We build high-performance software for web, mobile, AI, and Web3.", image: `${SITE_URL}/og-images/og-contact.png` },
   { path: "/stack", title: "Platforms", description: "Explore the Wemakespace ecosystem of high-performance digital platforms.", image: `${SITE_URL}/og-images/og-platforms.png` },
   { path: "/solutions", title: "Solutions", description: "We solve complex engineering challenges for forward-thinking companies.", image: `${SITE_URL}/og-images/og-solutions.png` },

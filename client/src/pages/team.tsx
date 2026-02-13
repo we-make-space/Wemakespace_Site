@@ -8,20 +8,20 @@ const team = [
   {
     name: "Alex Rivera",
     role: "Founding Partner & Creative Director",
-    bio: "Visionary behind the Resonance engine, bridging the gap between high-performance engineering and spatial aesthetics.",
+    bio: "Visionary behind our platform architecture, bridging the gap between high-performance engineering and modern product design.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
     social: { twitter: "#", linkedin: "#", github: "#" }
   },
   {
     name: "Sarah Chen",
     role: "Head of Engineering",
-    bio: "Architect of AetherOS, specialized in low-latency distributed systems and complex spatial UI infrastructure.",
+    bio: "Specialized in low-latency distributed systems and complex UI infrastructure.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop",
     social: { twitter: "#", linkedin: "#", github: "#" }
   },
   {
     name: "Marcus Thorne",
-    role: "Spatial Experience Lead",
+    role: "Product Experience Lead",
     bio: "Defining the next generation of digital commerce through Fashnect and immersive interaction models.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop",
     social: { twitter: "#", linkedin: "#", github: "#" }

@@ -31,19 +31,19 @@ export default function Terms() {
             prose-h2:text-2xl sm:prose-h2:text-3xl md:prose-h2:text-4xl prose-h3:text-lg sm:prose-h3:text-xl md:prose-h3:text-2xl prose-strong:text-primary prose-p:mb-4 sm:prose-p:mb-6">
             
             <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using Wemakespace platforms, including AetherOS, Hives, and Fashnect, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+            <p>By accessing or using Wemakespace platforms, including Hives, Fashnect, and our other products, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
 
             <h2>2. License to Use</h2>
             <p>Wemakespace grants you a personal, non-exclusive, non-transferable license to use our software for its intended purpose. Any attempt to reverse-engineer, decompile, or bypass our security protocols is a violation of this license.</p>
 
             <h2>3. Intellectual Property</h2>
-            <p>All spatial designs, proprietary algorithms, brand assets, and the unique "Resonance" engine are the exclusive property of Wemakespace. Unauthorized use of our IP is strictly prohibited.</p>
+            <p>All proprietary software, algorithms, brand assets, and platform technology are the exclusive property of Wemakespace. Unauthorized use of our IP is strictly prohibited.</p>
 
             <h2>4. Service Availability</h2>
             <p>While we strive for 99.99% uptime, Wemakespace services are provided "as is." We are not liable for any temporary service interruptions required for critical system maintenance or global updates.</p>
 
             <h2>5. User Conduct</h2>
-            <p>Users are expected to maintain the integrity of our digital spaces. We reserve the right to suspend accounts that engage in malicious activity, harassment, or any behavior that compromises the spatial experience for others.</p>
+            <p>Users are expected to maintain the integrity of our platforms. We reserve the right to suspend accounts that engage in malicious activity, harassment, or any behavior that compromises the experience for others.</p>
 
             <h2>6. Governing Law</h2>
             <p>These terms are governed by the laws of the jurisdiction in which Wemakespace operates, without regard to conflict of law principles.</p>

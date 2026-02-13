@@ -14,7 +14,7 @@ import {
 import { usePlatforms } from "@/hooks/use-content";
 import { getIconByName } from "@/lib/icons";
 
-import futuristicSpatialUI from "@assets/generated_images/futuristic_3d_spatial_user_interface_mockup.png";
+import futuristicPlatformUI from "@assets/generated_images/futuristic_3d_spatial_user_interface_mockup.png";
 
 export default function Stack() {
   const { data: platforms = [], isLoading } = usePlatforms();
@@ -34,8 +34,8 @@ export default function Stack() {
           >
             <div className="absolute inset-0 z-0">
               <img 
-                src={futuristicSpatialUI} 
-                alt="AetherOS Spatial UI" 
+                src={futuristicPlatformUI} 
+                alt="Wemakespace platform interface" 
                 className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2000ms]"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />
@@ -163,7 +163,7 @@ export default function Stack() {
                 </div>
                 <h4 className="text-2xl font-bold font-display">Bespoke Design</h4>
                 <p className="text-muted-foreground leading-relaxed font-light">
-                  Every interface is a custom-crafted spatial experience designed for maximum human resonance.
+                  Every interface is a custom-crafted experience designed for maximum usability and performance.
                 </p>
               </div>
             </div>

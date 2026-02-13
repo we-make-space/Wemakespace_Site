@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { title: "Consult", desc: "Understanding your spatial needs and vision." },
+  { title: "Consult", desc: "Understanding your technical needs and vision." },
   { title: "Design", desc: "Crafting a bespoke concept using 3D modeling." },
   { title: "Refine", desc: "Iterating until the harmony is perfect." },
   { title: "Execute", desc: "Bringing the vision to life with precision." }

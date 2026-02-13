@@ -30,7 +30,7 @@ function setMetaTag(
 
 export function SEO({
   title,
-  description = "Wemakespace is an extraordinary digital studio specializing in spatial UI and high-performance software ecosystems.",
+  description = "Wemakespace is a tech company specializing in high-performance software, web, mobile, AI, and Web3 platforms.",
   image,
   type = "website",
 }: SEOProps) {

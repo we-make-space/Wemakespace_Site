@@ -59,8 +59,8 @@ export function ProjectShowcase() {
                     </div>
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-0">
-                    <div className="min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 sm:gap-4">
+                    <div className="min-w-0 flex-1">
                       <h3 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tighter mb-1 sm:mb-2 group-hover:text-primary transition-colors">
                         {platform.name}
                       </h3>
@@ -69,9 +69,9 @@ export function ProjectShowcase() {
                       )}
                     </div>
                     {platform.features && platform.features.length > 0 && (
-                      <div className="hidden sm:flex gap-3 flex-wrap" onClick={(e) => e.stopPropagation()}>
+                      <div className="hidden sm:flex gap-2 sm:gap-3 flex-wrap justify-end shrink-0" onClick={(e) => e.stopPropagation()}>
                         {platform.features.slice(0, 2).map((tag: string) => (
-                          <span key={tag} className="text-xs uppercase tracking-widest font-black border border-primary/20 bg-primary/5 text-primary px-4 py-1.5 rounded-full">
+                          <span key={tag} className="text-xs uppercase tracking-widest font-black border border-primary/20 bg-primary/5 text-primary px-3 py-1.5 rounded-full">
                             {tag}
                           </span>
                         ))}

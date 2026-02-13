@@ -46,7 +46,7 @@ export function Hero() {
             >
               <Sparkles className="w-4 h-4 animate-pulse shrink-0" /> Next-Gen Software Company
             </motion.span>
-            <h1 className="text-[1.5rem] min-[360px]:text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black text-foreground leading-[1.1] sm:leading-[0.9] tracking-tighter mb-3 sm:mb-8 break-words">
+            <h1 className="text-[2.2rem] min-[370px]:text-[2.7rem] min-[410px]:text-[3.3rem] min-[500px]:text-[3.7rem] min-[600px]:text-[4.5rem] sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-[7rem] font-display font-black text-foreground leading-[1.10] sm:leading-[0.9] tracking-tighter mb-3 sm:mb-8 break-words">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -57,12 +57,12 @@ export function Hero() {
                   We build
                 </motion.span>
               </span>
-              <span className="block overflow-hidden">
+              <span className="block overflow-visible">
                 <motion.span
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-x block sm:inline"
+                  className="text-primary sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r sm:from-primary sm:via-secondary sm:to-primary sm:bg-[length:200%_auto] sm:animate-gradient-x block sm:inline"
                 >
                   {" "}what's next.
                 </motion.span>

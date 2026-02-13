@@ -27,7 +27,7 @@ Wemakespace is a tech company based in Sunyani, Ghana, building innovative solut
 | Page | Route | Description |
 |------|-------|-------------|
 | Home | `/` | Hero, project showcase, services, testimonials |
-| Platforms | `/stack` | Flagship products (Fashnect, AetherOS, Hives) |
+| Platforms | `/stack` | Flagship products (Fashnect, Hives) |
 | Services | `/solutions` | Web, Mobile, AI, Training, Advisory, Cloud, Security |
 | Blog | `/cases` | Articles and insights |
 | Vision | `/vision` | Company values and leadership |

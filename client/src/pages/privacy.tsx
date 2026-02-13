@@ -31,18 +31,18 @@ export default function PrivacyPolicy() {
             prose-h2:text-2xl sm:prose-h2:text-3xl md:prose-h2:text-4xl prose-h3:text-lg sm:prose-h3:text-xl md:prose-h3:text-2xl prose-strong:text-primary prose-p:mb-4 sm:prose-p:mb-6">
             
             <h2>1. Our Commitment to Privacy</h2>
-            <p>At Wemakespace, we build spatial ecosystems that respect human boundaries. Privacy isn't just a legal requirement for us—it's a fundamental architectural principle. We believe you should always know what data is being collected and have total control over your digital footprint.</p>
+            <p>At Wemakespace, we build software platforms that respect user privacy. Privacy isn't just a legal requirement for us—it's a fundamental principle. We believe you should always know what data is being collected and have total control over your digital footprint.</p>
 
             <h2>2. Data Collection & Usage</h2>
             <p>We collect only the essential information required to provide our high-performance services. This includes:</p>
             <ul>
               <li><strong>Account Information:</strong> Name, email, and authentication credentials.</li>
-              <li><strong>Platform Interactions:</strong> How you move through our spatial interfaces to optimize resonance.</li>
+              <li><strong>Platform Interactions:</strong> How you use our interfaces to help us optimize performance.</li>
               <li><strong>Technical Logs:</strong> Anonymous system data to ensure zero-latency performance.</li>
             </ul>
 
-            <h2>3. Spatial Security Architecture</h2>
-            <p>All data processed within AetherOS and our related platforms is protected by enterprise-grade AES-256 encryption. We utilize zero-trust security models, meaning your data is encrypted both at rest and in transit.</p>
+            <h2>3. Security Architecture</h2>
+            <p>All data processed within our platforms is protected by enterprise-grade AES-256 encryption. We utilize zero-trust security models, meaning your data is encrypted both at rest and in transit.</p>
 
             <h2>4. Your Rights</h2>
             <p>You have the absolute right to access, rectify, or request the deletion of your personal data at any time. We provide intuitive tools within our platform settings to manage these preferences without friction.</p>

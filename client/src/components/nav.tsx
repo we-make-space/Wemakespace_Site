@@ -84,9 +84,8 @@ export function Nav() {
 
           <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
-          {/* Mobile Toggle - single hamburger/X in same spot to avoid duplicate close button */}
-          <div className="lg:hidden flex items-center gap-2 z-[100]">
-            <ThemeToggle />
+          {/* Mobile Toggle - hamburger/X only; theme toggle is in mobile menu overlay at bottom */}
+          <div className="lg:hidden flex items-center z-[100]">
             <button
               className="min-w-[44px] min-h-[44px] flex items-center justify-center text-foreground transition-transform active:scale-90 rounded-full"
               onClick={() => setIsOpen(!isOpen)}

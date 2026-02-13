@@ -21,7 +21,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   const services = [
     { id: "platform", name: "Applications", icon: Rocket },
-    { id: "spatial", name: "AI-Powered Solutions", icon: Sparkles },
+    { id: "ai", name: "AI-Powered Solutions", icon: Sparkles },
     { id: "ecosystem", name: "Software Training & Bootcamps", icon: Globe },
     { id: "consulting", name: "Consultancy & Strategy", icon: MessageSquare }
   ];
