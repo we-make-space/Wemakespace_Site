@@ -5,12 +5,12 @@ import { usePlatforms } from "@/hooks/use-content";
 export function ProjectShowcase() {
   const { data: platforms = [], isLoading } = usePlatforms();
   return (
-    <section id="platforms" className="py-16 sm:py-24 md:py-32 lg:py-40 bg-background relative">
-      <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 md:mb-24 gap-4 sm:gap-6 md:gap-8">
+    <section id="platforms" className="py-10 min-[375px]:py-16 sm:py-24 md:py-32 lg:py-40 bg-background relative">
+      <div className="container px-3 min-[375px]:px-4 sm:px-6 mx-auto max-w-[100vw]">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 min-[375px]:mb-12 sm:mb-16 md:mb-24 gap-3 min-[375px]:gap-4 sm:gap-6 md:gap-8">
           <div className="max-w-2xl">
-            <span className="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-2 sm:mb-4 block">Our products</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9]">
+            <span className="text-primary font-bold uppercase tracking-widest text-[10px] min-[375px]:text-xs sm:text-sm mb-1.5 min-[375px]:mb-2 sm:mb-4 block">Our products</span>
+            <h2 className="text-2xl min-[375px]:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-tighter uppercase leading-[0.9]">
               Flagship <br/><span className="text-primary italic">Platforms.</span>
             </h2>
           </div>
@@ -27,7 +27,7 @@ export function ProjectShowcase() {
             <p className="text-muted-foreground text-sm sm:text-base">Loading platforms...</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-[375px]:gap-8 sm:gap-12 md:gap-16">
             {platforms.slice(0, 2).map((platform, i) => (
               <Link key={platform.id} href={`/solutions/${platform.slug}`}>
                 <motion.div
@@ -37,7 +37,7 @@ export function ProjectShowcase() {
                   transition={{ delay: i * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] aspect-[16/10] mb-4 sm:mb-6 md:mb-8 bg-muted border border-white/5">
+                  <div className="relative overflow-hidden rounded-[1.5rem] min-[375px]:rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] aspect-[16/10] mb-3 min-[375px]:mb-4 sm:mb-6 md:mb-8 bg-muted border border-white/5">
                     {platform.image_url && (
                       <motion.img
                         src={platform.image_url}
@@ -54,14 +54,14 @@ export function ProjectShowcase() {
                         </p>
                       </div>
                     )}
-                    <div className="absolute top-3 right-3 sm:top-6 sm:right-6 md:top-8 md:right-8 bg-white/10 backdrop-blur-xl border border-white/20 px-3 py-1.5 sm:px-6 sm:py-2 rounded-full text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="absolute top-2 right-2 min-[375px]:top-3 min-[375px]:right-3 sm:top-6 sm:right-6 md:top-8 md:right-8 bg-white/10 backdrop-blur-xl border border-white/20 px-2.5 min-[375px]:px-3 py-1 sm:py-1.5 sm:px-6 sm:py-2 rounded-full text-white text-[9px] min-[375px]:text-[10px] sm:text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                       View Platform
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-0">
                     <div className="min-w-0">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tighter mb-1 sm:mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tighter mb-1 sm:mb-2 group-hover:text-primary transition-colors">
                         {platform.name}
                       </h3>
                       {platform.tagline && (
@@ -69,7 +69,7 @@ export function ProjectShowcase() {
                       )}
                     </div>
                     {platform.features && platform.features.length > 0 && (
-                      <div className="flex gap-3 flex-wrap">
+                      <div className="flex gap-3 flex-wrap" onClick={(e) => e.stopPropagation()}>
                         {platform.features.slice(0, 2).map((tag: string) => (
                           <span key={tag} className="text-[10px] uppercase tracking-widest font-black border border-primary/20 bg-primary/5 text-primary px-4 py-1.5 rounded-full">
                             {tag}

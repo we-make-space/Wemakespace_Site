@@ -25,25 +25,25 @@ export function Nav() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-      scrolled ? "py-2 sm:py-4" : "py-4 sm:py-6 md:py-8"
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] ${
+      scrolled ? "py-2 sm:py-4" : "py-3 sm:py-6 md:py-8"
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 max-w-[100vw]">
+      <div className="container mx-auto px-3 min-[375px]:px-4 sm:px-6 max-w-[100vw]">
         <motion.div 
           initial={{ y: -100 }}
           animate={{ y: 0 }}
-          className={`relative flex items-center justify-between px-4 sm:px-6 md:px-8 h-14 sm:h-16 md:h-20 rounded-full border transition-all duration-500 ${
+          className={`relative flex items-center justify-between px-3 min-[375px]:px-4 sm:px-6 md:px-8 h-12 min-[375px]:h-14 sm:h-16 md:h-20 rounded-full border transition-all duration-500 ${
             scrolled 
               ? "bg-black/40 backdrop-blur-2xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
               : "bg-transparent border-transparent"
           }`}
         >
           <Link href="/">
-            <a className="group flex items-center gap-2 sm:gap-3 min-h-[44px]">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 group-hover:rotate-12 transition-transform duration-500">
+            <a className="group flex items-center gap-1.5 min-[375px]:gap-2 sm:gap-3 min-h-[44px]">
+              <div className="w-8 h-8 min-[375px]:w-9 min-[375px]:h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 group-hover:rotate-12 transition-transform duration-500">
                 <WemakeSpaceLogo className={"rounded"} size={28} />
               </div>
-              <span className="text-lg sm:text-xl md:text-2xl font-display font-black text-foreground tracking-tighter truncate max-w-[140px] sm:max-w-none">
+              <span className="text-base min-[375px]:text-lg sm:text-xl md:text-2xl font-display font-black text-foreground tracking-tighter truncate max-w-[110px] min-[375px]:max-w-[140px] sm:max-w-none">
                 Wemakespace<span className="text-primary">.</span>
               </span>
             </a>
@@ -98,18 +98,8 @@ export function Nav() {
         initial={false}
         animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
         transition={{ type: "tween", duration: 0.25 }}
-        className="fixed inset-0 bg-background/98 backdrop-blur-3xl z-[90] lg:hidden flex flex-col items-center justify-center gap-6 px-6 overflow-y-auto pt-16 pb-12"
+        className="fixed inset-0 bg-background/98 backdrop-blur-3xl z-[90] lg:hidden flex flex-col items-center justify-center gap-4 min-[375px]:gap-6 px-4 min-[375px]:px-6 overflow-y-auto pt-14 min-[375px]:pt-16 pb-10 min-[375px]:pb-12"
       >
-        {/* Close button - visible when menu is open */}
-        <button
-          type="button"
-          onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 sm:top-6 sm:right-6 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full bg-foreground/10 hover:bg-foreground/20 text-foreground transition-colors"
-          aria-label="Close menu"
-        >
-          <X className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-        </button>
-
         {[
           { name: "Platforms", path: "/stack" },
           { name: "Services", path: "/solutions" },
@@ -121,7 +111,7 @@ export function Nav() {
               initial={ { opacity: 0, y: 20 } }
               animate={isOpen ? { opacity: 1, y: 0 } : {}}
               transition={ { delay: i * 0.1 } }
-              className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-foreground hover:text-primary transition-colors cursor-pointer block py-3 min-h-[48px]"
+              className="text-xl min-[375px]:text-2xl sm:text-4xl md:text-5xl font-display font-black text-foreground hover:text-primary transition-colors cursor-pointer block py-2.5 min-[375px]:py-3 min-h-[44px] min-[375px]:min-h-[48px]"
               onClick={() => setIsOpen(false)}
             >
               {item.name}

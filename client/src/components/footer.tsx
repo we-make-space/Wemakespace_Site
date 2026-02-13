@@ -16,22 +16,22 @@ export function Footer({ showCTA = false }: FooterProps) {
   const [email, setEmail] = useState("");
 
   return (
-    <footer className="bg-foreground text-background py-10 sm:py-14 md:py-16 relative overflow-hidden">
+    <footer className="bg-foreground text-background py-8 min-[375px]:py-10 sm:py-14 md:py-16 relative overflow-hidden">
       {/* Newsletter CTA Section */}
       {showCTA && (
-        <div className="container px-4 sm:px-6 mx-auto mb-16 sm:mb-24 md:mb-32">
+        <div className="container px-3 min-[375px]:px-4 sm:px-6 mx-auto mb-10 min-[375px]:mb-16 sm:mb-24 md:mb-32">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary/10 border border-primary/20 p-5 sm:p-6 md:p-8 lg:p-12 rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] text-foreground flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 overflow-hidden relative"
+            className="bg-primary/10 border border-primary/20 p-4 min-[375px]:p-5 sm:p-6 md:p-8 lg:p-12 rounded-[1.5rem] min-[375px]:rounded-[2rem] sm:rounded-[2.5rem] md:rounded-[3rem] text-foreground flex flex-col md:flex-row items-center gap-4 min-[375px]:gap-6 sm:gap-8 md:gap-12 overflow-hidden relative"
           >
             <div className="absolute inset-0 opacity-10 z-0">
               <img src={newsletterImage} alt="Newsletter Background" className="w-full h-full object-cover" />
             </div>
             
             <div className="relative z-10 flex-1 w-full text-center md:text-left">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black tracking-tighter uppercase leading-tight mb-3 sm:mb-6">
+              <h2 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-black tracking-tighter uppercase leading-tight mb-2 min-[375px]:mb-3 sm:mb-6">
                 Stay in the <br/><span className="text-primary italic">Resonance.</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-muted-foreground leading-snug max-w-xl">
@@ -66,8 +66,8 @@ export function Footer({ showCTA = false }: FooterProps) {
 
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
-      <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
+      <div className="container px-3 min-[375px]:px-4 sm:px-6 mx-auto max-w-[100vw]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 min-[375px]:gap-8 sm:gap-10 md:gap-12 mb-6 min-[375px]:mb-8 sm:mb-12">
           <div className="sm:col-span-2 flex flex-col items-start gap-4 sm:gap-6">
             <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-6">
               <WemakeSpaceLogo className={"rounded shrink-0"} size={28} />

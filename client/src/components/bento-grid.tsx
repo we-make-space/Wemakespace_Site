@@ -62,29 +62,29 @@ const bentoItems = [
 
 export function BentoGrid() {
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 bg-background relative overflow-hidden">
+    <section id="services" className="py-8 min-[375px]:py-12 sm:py-16 md:py-20 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/10 blur-[150px] translate-x-1/2 translate-y-1/2 rounded-full pointer-events-none" />
 
-      <div className="container px-4 sm:px-6 mx-auto relative z-10 max-w-[100vw]">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-12 md:mb-16 gap-6 sm:gap-8">
+      <div className="container px-3 min-[375px]:px-4 sm:px-6 mx-auto relative z-10 max-w-[100vw]">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 min-[375px]:mb-8 sm:mb-12 md:mb-16 gap-4 min-[375px]:gap-6 sm:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-2xl min-w-0 w-full"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-8 leading-[0.9] uppercase tracking-tighter text-foreground">
+            <h2 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black mb-3 min-[375px]:mb-4 sm:mb-8 leading-[1.05] min-[375px]:leading-[0.95] sm:leading-[0.9] uppercase tracking-tighter text-foreground break-words overflow-hidden">
               The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Architecture</span> <br/> of Tomorrow.
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl font-light">
+            <p className="text-sm min-[375px]:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl font-light">
               Architecting the future with scalable solutions for visionary growth.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-3 min-[375px]:gap-4 sm:gap-6">
           {bentoItems.map((item, index) => (
             <motion.div
               key={index}
@@ -94,7 +94,7 @@ export function BentoGrid() {
               transition={{ delay: index * 0.1, duration: 0.8 }}
               whileHover={{ y: -5 }}
               className={cn(
-                "group relative p-5 sm:p-6 md:p-8 rounded-[1.5rem] sm:rounded-[2rem] border overflow-hidden transition-all duration-500",
+                "group relative p-4 min-[375px]:p-5 sm:p-6 md:p-8 rounded-[1.25rem] min-[375px]:rounded-[1.5rem] sm:rounded-[2rem] border overflow-hidden transition-all duration-500",
                 item.className,
                 item.bg
               )}
@@ -109,18 +109,18 @@ export function BentoGrid() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
               </div>
 
-              <div className="relative z-10 h-full flex flex-col justify-between min-h-[200px]">
+              <div className="relative z-10 h-full flex flex-col justify-between min-h-[160px] min-[375px]:min-h-[200px]">
                 <div className="flex justify-between items-start">
-                  <div className={cn("p-3 sm:p-4 bg-background/40 rounded-xl sm:rounded-2xl backdrop-blur-xl border border-foreground/10", item.color)}>
-                    <item.icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                  <div className={cn("p-2.5 min-[375px]:p-3 sm:p-4 bg-background/40 rounded-lg min-[375px]:rounded-xl sm:rounded-2xl backdrop-blur-xl border border-foreground/10", item.color)}>
+                    <item.icon className="w-5 h-5 min-[375px]:w-6 min-[375px]:h-6 sm:w-8 sm:h-8" />
                   </div>
                   <div className="p-2 bg-white/5 rounded-full backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
                     <ArrowUpRight className="w-5 h-5 text-foreground" />
                   </div>
                 </div>
-                <div className="space-y-2 sm:space-y-3">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight tracking-tight">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm sm:text-base leading-snug font-light line-clamp-2 sm:line-clamp-none">{item.description}</p>
+                <div className="space-y-1.5 min-[375px]:space-y-2 sm:space-y-3">
+                  <h3 className="text-base min-[375px]:text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight tracking-tight">{item.title}</h3>
+                  <p className="text-muted-foreground text-xs min-[375px]:text-sm sm:text-base leading-snug font-light line-clamp-2 sm:line-clamp-none">{item.description}</p>
                 </div>
               </div>
               

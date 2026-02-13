@@ -60,7 +60,7 @@ ${formData.company}
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-2 min-[375px]:p-3 sm:p-4 md:p-6 overflow-y-auto">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -73,7 +73,7 @@ ${formData.company}
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-4xl my-4 sm:my-6 bg-neutral-900 border border-white/10 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl"
+            className="relative w-full max-w-4xl my-2 min-[375px]:my-4 sm:my-6 bg-neutral-900 border border-white/10 rounded-[1.25rem] min-[375px]:rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl max-h-[95vh] overflow-y-auto"
           >
             <button 
               onClick={onClose}
@@ -85,15 +85,15 @@ ${formData.company}
 
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Side */}
-              <div className="p-4 sm:p-6 md:p-12 bg-primary/5 flex flex-col justify-between md:border-r md:border-white/5 border-transparent">
+              <div className="p-3 min-[375px]:p-4 sm:p-6 md:p-12 bg-primary/5 flex flex-col justify-between md:border-r md:border-white/5 border-transparent">
                 <div>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-8">
+                  <div className="w-9 h-9 min-[375px]:w-10 min-[375px]:h-10 sm:w-12 sm:h-12 bg-primary rounded-lg sm:rounded-xl flex items-center justify-center mb-3 min-[375px]:mb-4 sm:mb-8">
                     <Code className="text-white w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tighter uppercase leading-none mb-3 sm:mb-6">
+                  <h2 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-tighter uppercase leading-none mb-2 min-[375px]:mb-3 sm:mb-6">
                     Talk to <br/><span className="text-primary italic">US.</span>
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-light leading-relaxed">
+                  <p className="text-xs min-[375px]:text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-light leading-relaxed">
                     Tell us about your vision. We'll help you build the digital space your business deserves.
                   </p>
                 </div>
@@ -111,20 +111,20 @@ ${formData.company}
               </div>
 
               {/* Right Side: Form */}
-              <div className="p-4 sm:p-6 md:p-12 overflow-y-auto max-h-[85vh]">
+              <div className="p-3 min-[375px]:p-4 sm:p-6 md:p-12 overflow-y-auto max-h-[85vh]">
                 <form className="space-y-5 sm:space-y-6 md:space-y-8" onSubmit={handleSubmit}>
                   {/* Services */}
                   <div className="space-y-3 sm:space-y-4">
                     <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                       What are we building?
                     </label>
-                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <div className="grid grid-cols-2 gap-1.5 min-[375px]:gap-2 sm:gap-3">
                       {services.map((service) => (
                         <button
                           key={service.id}
                           type="button"
                           onClick={() => setFormData({ ...formData, project: service.id })}
-                          className={`min-h-[44px] p-3 sm:p-4 rounded-xl sm:rounded-2xl border transition-all text-left flex flex-col gap-1 sm:gap-2 ${
+                          className={`min-h-[44px] p-2.5 min-[375px]:p-3 sm:p-4 rounded-lg min-[375px]:rounded-xl sm:rounded-2xl border transition-all text-left flex flex-col gap-0.5 min-[375px]:gap-1 sm:gap-2 ${
                             formData.project === service.id
                               ? "bg-primary border-primary text-white"
                               : "bg-white/5 border-white/10 text-muted-foreground hover:border-primary/50"

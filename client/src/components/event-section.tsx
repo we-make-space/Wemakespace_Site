@@ -13,7 +13,7 @@ const NEXT_EVENT = {
 
 export function EventSection() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-24 overflow-hidden" data-testid="section-event">
+    <section className="relative py-8 min-[375px]:py-12 sm:py-16 md:py-24 overflow-hidden" data-testid="section-event">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -22,8 +22,8 @@ export function EventSection() {
         }}
       />
 
-      <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
-        <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 items-center">
+      <div className="container px-3 min-[375px]:px-4 sm:px-6 mx-auto max-w-[100vw]">
+        <div className="grid lg:grid-cols-12 gap-6 min-[375px]:gap-8 sm:gap-10 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -66,9 +66,9 @@ export function EventSection() {
                   </div>
                 </div>
 
-                <div className="p-4 sm:p-5 md:p-6 lg:p-7">
+                <div className="p-3 min-[375px]:p-4 sm:p-5 md:p-6 lg:p-7">
                   <div className="flex items-center justify-between gap-3" data-testid="row-event-title">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight">
+                    <h2 className="text-lg min-[375px]:text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight">
                       {NEXT_EVENT.title}
                     </h2>
                     <div className="hidden sm:flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 text-primary">
@@ -87,7 +87,7 @@ export function EventSection() {
                     </div>
                     <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-background/70 dark:bg-background/10 px-2.5 sm:px-3 py-1 text-xs sm:text-sm">
                       <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" aria-hidden="true" />
-                      <span data-testid="text-event-location" className="truncate max-w-[180px] sm:max-w-none">{NEXT_EVENT.location}</span>
+                      <span data-testid="text-event-location" className="truncate max-w-[140px] min-[375px]:max-w-[180px] sm:max-w-none">{NEXT_EVENT.location}</span>
                     </div>
                   </div>
 
@@ -125,7 +125,7 @@ export function EventSection() {
                 Recap
               </p>
               <h2
-                className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-display font-bold leading-[1.08]"
+                className="mt-2 sm:mt-3 text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-display font-bold leading-[1.08]"
                 data-testid="text-event-heading"
               >
                 Recap of our 

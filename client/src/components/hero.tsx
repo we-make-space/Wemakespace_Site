@@ -17,7 +17,7 @@ export function Hero() {
   const yTranslate = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
   return (
-    <section ref={targetRef} className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 pb-8">
+    <section ref={targetRef} className="relative min-h-[80vh] min-[375px]:min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-14 sm:pt-20 pb-6 sm:pb-8">
       {/* Parallax Background */}
       <motion.div style={{ opacity, scale }} className="absolute inset-0 z-0">
         <img
@@ -28,7 +28,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/20 to-background" />
       </motion.div>
 
-      <div className="container relative z-10 px-4 sm:px-6 mx-auto max-w-[100vw]">
+      <div className="container relative z-10 px-3 min-[375px]:px-4 sm:px-6 mx-auto max-w-[100vw]">
         <motion.div 
           style={{ y: yTranslate, opacity }}
           className="max-w-5xl mx-auto text-center space-y-4 sm:space-y-8"
@@ -42,11 +42,11 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-12 backdrop-blur-2xl shadow-[0_0_20px_rgba(255,94,54,0.1)]"
+              className="inline-flex items-center gap-1.5 min-[375px]:gap-2 px-3 min-[375px]:px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-[10px] min-[375px]:text-xs font-bold uppercase tracking-[0.15em] min-[375px]:tracking-[0.2em] mb-8 sm:mb-12 backdrop-blur-2xl shadow-[0_0_20px_rgba(255,94,54,0.1)]"
             >
-              <Sparkles className="w-4 h-4 animate-pulse" /> Next-Gen Software Company
+              <Sparkles className="w-3.5 h-3.5 min-[375px]:w-4 min-[375px]:h-4 animate-pulse shrink-0" /> <span className="whitespace-nowrap">Next-Gen Software Company</span>
             </motion.span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-foreground leading-[0.85] tracking-tighter mb-4 sm:mb-8">
+            <h1 className="text-[2rem] min-[375px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black text-foreground leading-[0.9] min-[375px]:leading-[0.85] tracking-tighter mb-3 sm:mb-8">
               <span className="block overflow-hidden">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -74,7 +74,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground/80 max-w-3xl mx-auto leading-snug sm:leading-tight font-light tracking-tight px-1"
+            className="text-sm min-[375px]:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground/80 max-w-3xl mx-auto leading-snug sm:leading-tight font-light tracking-tight px-0 min-[375px]:px-1"
           >
             Engineering seamless digital experiences.
             We build high-performance products for people, platforms, and the future.
@@ -121,7 +121,7 @@ export function Hero() {
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground/40 flex flex-col items-center gap-2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground/40 flex flex-col items-center gap-2"
       >
         <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
         <div className="w-px h-12 bg-gradient-to-b from-primary/50 to-transparent" />
