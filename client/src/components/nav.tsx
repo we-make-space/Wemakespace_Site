@@ -24,6 +24,17 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] ${
       scrolled ? "py-2 sm:py-4" : "py-3 sm:py-6 md:py-8"
@@ -73,8 +84,8 @@ export function Nav() {
 
           <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
-          {/* Mobile Toggle */}
-          <div className="lg:hidden flex items-center gap-2 z-[100]">
+          {/* Mobile Toggle - stays visible above overlay when menu is open */}
+          <div className={`lg:hidden flex items-center gap-2 ${isOpen ? "relative z-[110]" : "z-[100]"}`}>
             <ThemeToggle />
             <button
               className="min-w-[44px] min-h-[44px] flex items-center justify-center text-foreground transition-transform active:scale-90 rounded-full"

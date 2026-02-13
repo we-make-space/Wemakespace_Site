@@ -73,9 +73,9 @@ export function BentoGrid() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl min-w-0 w-full"
+            className="max-w-2xl lg:max-w-4xl xl:max-w-none min-w-0 w-full"
           >
-            <h2 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black mb-3 min-[375px]:mb-4 sm:mb-8 leading-[1.05] min-[375px]:leading-[0.95] sm:leading-[0.9] uppercase tracking-tighter text-foreground break-words overflow-hidden">
+            <h2 className="text-xl min-[375px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-black mb-3 min-[375px]:mb-4 sm:mb-8 leading-[1.05] min-[375px]:leading-[0.95] sm:leading-[0.9] uppercase tracking-tighter text-foreground break-words overflow-hidden">
               The <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Architecture</span> <br/> of Tomorrow.
             </h2>
             <p className="text-sm min-[375px]:text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl font-light">

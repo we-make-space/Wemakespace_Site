@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { useBackNavigation } from "@/hooks/useBackNavigation";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, MapPin, Sparkles } from "lucide-react";
 import { SEO } from "@/components/seo";
@@ -22,6 +22,7 @@ const EVENT = {
 };
 
 export default function EventDetails() {
+  const goBack = useBackNavigation("/");
   return (
     <div className="min-h-screen bg-background text-foreground" data-testid="page-event-details">
       <SEO
@@ -38,14 +39,15 @@ export default function EventDetails() {
           }}
         />
         <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-10">
-          <Link
-            href="/"
+          <button
+            type="button"
+            onClick={goBack}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             data-testid="link-back-home"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Back
-          </Link>
+          </button>
         </div>
       </header>
 

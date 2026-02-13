@@ -1,17 +1,18 @@
-// src/store/navigation.ts
-import { useEffect, useRef } from "react";
+import { useCallback } from "react";
 import { useLocation } from "wouter";
 
-let previousPath: string | null = null;
+/**
+ * Returns a function that navigates back in history, or to the fallback path
+ * if there's no history (e.g. user opened link in new tab).
+ */
+export function useBackNavigation(fallbackPath: string = "/") {
+  const [, setLocation] = useLocation();
 
-export function useBackNavigation() {
-  const [location] = useLocation();
-  const currentPath = useRef(location);
-
-  useEffect(() => {
-    previousPath = currentPath.current;
-    currentPath.current = location;
-  }, [location]);
-
-  return previousPath;
+  return useCallback(() => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      setLocation(fallbackPath);
+    }
+  }, [fallbackPath, setLocation]);
 }

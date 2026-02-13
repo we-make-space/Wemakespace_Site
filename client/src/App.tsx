@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { ScrollOnRouteChange } from "@/components/scroll-on-route-change";
 import Home from "@/pages/home";
 import Stack from "@/pages/stack";
 import Solutions from "@/pages/solutions";
@@ -44,6 +45,7 @@ function App() {
       <ThemeProvider>
         <Toaster />
         <Router />
+        <ScrollOnRouteChange />
         <ScrollToTop />
         <Analytics />
         <SpeedInsights />

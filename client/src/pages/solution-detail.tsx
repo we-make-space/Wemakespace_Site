@@ -17,7 +17,7 @@ import { useBackNavigation } from "@/hooks/useBackNavigation";
 export default function SolutionDetail() {
   const { slug } = useParams();
   const { data: platform, isLoading } = usePlatform(slug || "");
-  const goBack = useBackNavigation("/platforms");
+  const goBack = useBackNavigation("/stack");
 
   if (isLoading) {
     return (

@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
+import { useBackNavigation } from "@/hooks/useBackNavigation";
 import { WemakeSpaceLogo } from "@/components/wemakespaceLogo";
 import { SEO } from "@/components/seo";
 import { getOgImageUrl } from "@/lib/og-images";
 
 export default function NotFound() {
+  const goBack = useBackNavigation("/");
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background p-4 sm:p-6 overflow-hidden relative">
       <SEO title="Page Not Found" description="404 - Page not found. Return to Wemakespace tech and software platform." image={getOgImageUrl("not-found")} />
@@ -53,7 +55,7 @@ export default function NotFound() {
             </Button>
           </Link>
           <Button 
-            onClick={() => window.history.back()}
+            onClick={goBack}
             size="lg" 
             variant="outline" 
             className="h-16 px-10 rounded-full border-border hover:bg-muted text-xl font-bold w-full sm:w-auto group transition-all"

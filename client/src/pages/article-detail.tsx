@@ -4,6 +4,7 @@ import { SEO } from "@/components/seo";
 import { getOgImageUrl } from "@/lib/og-images";
 import { Footer } from "@/components/footer";
 import { useParams, Link } from "wouter";
+import { useBackNavigation } from "@/hooks/useBackNavigation";
 import { 
   ArrowLeft, 
   Clock, 
@@ -18,6 +19,7 @@ import { format } from "date-fns";
 export default function ArticleDetail() {
   const { id } = useParams();
   const { data: article, isLoading } = useArticle(id || "");
+  const goBack = useBackNavigation("/cases");
 
   if (isLoading) {
     return (
@@ -56,14 +58,13 @@ export default function ArticleDetail() {
       <main className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 md:pb-40">
         <div className="container px-4 sm:px-6 mx-auto max-w-[100vw]">
           {/* Header */}
-          <Link href="/cases">
-            <motion.button 
-              whileHover={{ x: -5 }}
-              className="flex items-center gap-2 min-h-[44px] text-muted-foreground hover:text-primary mb-8 sm:mb-12 uppercase tracking-[0.2em] font-bold text-xs"
-            >
-              <ArrowLeft className="w-4 h-4" /> Back to Insights
-            </motion.button>
-          </Link>
+          <motion.button 
+            onClick={goBack}
+            whileHover={{ x: -5 }}
+            className="flex items-center gap-2 min-h-[44px] text-muted-foreground hover:text-primary mb-8 sm:mb-12 uppercase tracking-[0.2em] font-bold text-xs"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back to Insights
+          </motion.button>
 
           <div className="max-w-4xl mx-auto">
             <motion.div

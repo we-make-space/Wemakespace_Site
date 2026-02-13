@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "wouter";
+import { useBackNavigation } from "@/hooks/useBackNavigation";
 
 const COMPANY = {
   name: "Wemakespace LLC",
@@ -51,6 +52,7 @@ const item = {
 };
 
 export default function Contact() {
+  const goBack = useBackNavigation("/");
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
@@ -296,11 +298,13 @@ export default function Contact() {
                 >
                   Send us an email <ArrowRight className="w-4 h-4" />
                 </motion.a>
-                <Link href="/">
-                  <a className="inline-flex items-center gap-2 min-h-[48px] px-6 py-3 rounded-full border border-foreground/20 font-bold text-sm uppercase tracking-widest hover:bg-foreground/5 transition-colors">
-                    Back to Home
-                  </a>
-                </Link>
+                <button
+                  type="button"
+                  onClick={goBack}
+                  className="inline-flex items-center gap-2 min-h-[48px] px-6 py-3 rounded-full border border-foreground/20 font-bold text-sm uppercase tracking-widest hover:bg-foreground/5 transition-colors"
+                >
+                  Back to Home
+                </button>
               </div>
               </div>
             </motion.div>
