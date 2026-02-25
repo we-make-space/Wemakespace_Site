@@ -70,7 +70,7 @@ export default function Insights() {
               animate={{ opacity: 1, y: 0 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-display font-black tracking-tighter uppercase leading-tight mb-4 sm:mb-8"
             >
-              Updates & <br />
+              Updates <br />
               <span className="text-primary italic">& Releases.</span>
             </motion.h1>
 
