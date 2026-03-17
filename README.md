@@ -51,7 +51,7 @@ Wemakespace is a tech company based in Sunyani, Ghana, building innovative solut
 
 ---
 
-## Getting Started
+## Getting Started.
 
 ### Prerequisites
 
