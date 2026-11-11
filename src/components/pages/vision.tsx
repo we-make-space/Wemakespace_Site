@@ -8,10 +8,9 @@ import { Eye, Target, MessageCircle, Twitter, Linkedin, Github, Instagram } from
 import { Footer } from "@/components/footer";
 
 const leaders = [
-  { name: "Theophilus Owusu Adjei", role: "Co-founder & Chief Executive Officer", image: "/lencer.png", message: "We don't just build software; we create the spaces where the future lives.", social: { instagram: "https://www.instagram.com/theolencer/", linkedin: "https://www.linkedin.com/in/theophilus-owusu-adjei-4a1802250/", github: "https://github.com/TheoLencer1" } },
-  { name: "Bubunamawu Kofi Adiko", role: "Co-founder & Chief Technoogy Officer", image: "/bubu.png", message: "Performance is not a feature—it's the foundation of everything we dream.", social: { instagram: "https://www.instagram.com/bubuadico/", linkedin: "https://www.linkedin.com/in/bubuadiko/", github: "https://github.com/BubuAdico" } },
+  { name: "Bubunamawu Kofi Adiko", role: "Co-founder & Chief Executive Officer", image: "/bubu.png", message: "Performance is not a feature—it's the foundation of everything we dream.", social: { instagram: "https://www.instagram.com/bubuadico/", linkedin: "https://www.linkedin.com/in/bubuadiko/", github: "https://github.com/BubuAdico" } },
   { name: "Ephraim Adinyira", role: "Co-founder & Chief Operations Officer", image: "/Ephraim.png", message: "Design is the invisible hand that makes complex technology feel like magic.", social: { instagram: "https://www.instagram.com/ephardi_young/", linkedin: "#", github: "#" } },
-  { name: "Desmond Asamoah", role: "Chief Product Officer", image: "desmond.png", message: "Scale is about more than numbers; it's about the quality of the room we build.", social: { instagram: "https://www.instagram.com/kwasi_asamoah18/", linkedin: "https://www.linkedin.com/in/desmond-asamoah-15b61a1b7/", github: "https://github.com/waltob123" } },
+  { name: "Desmond Asamoah", role: "Chief Technology Officer", image: "desmond.png", message: "Scale is about more than numbers; it's about the quality of the room we build.", social: { instagram: "https://www.instagram.com/kwasi_asamoah18/", linkedin: "https://www.linkedin.com/in/desmond-asamoah-15b61a1b7/", github: "https://github.com/waltob123" } },
   { name: "Eunice Asamoah", role: "Secretary", image: "Eunice.png", message: "Engineering excellence is the prerequisite for digital freedom.", social: { instagram: "https://www.instagram.com/asanb_1/", linkedin: "https://www.linkedin.com/in/asamoah-eunice-1b917634b/", github: "#" } },
 ];
 
@@ -79,7 +78,7 @@ export function VisionPage() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tighter uppercase">Our Leadership</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {leaders.map((leader, i) => (
                 <motion.div key={leader.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.2 }} className="group">
                   <div className="relative aspect-[3/4] rounded-[2rem] sm:rounded-[3rem] overflow-hidden mb-4 sm:mb-6 md:mb-8 border border-foreground/10">
